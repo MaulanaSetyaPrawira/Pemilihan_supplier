@@ -2,269 +2,232 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Wireframe 01 — Halaman Login</title>
+<title>Masuk — SPK Rumah Cue</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --primary: #0f4c81;
+  --primary-hover: #0c3d68;
+  --primary-soft: #e8f1f8;
+  --success: #059669;
+  --success-soft: #ecfdf5;
+  --warning: #d97706;
+  --warning-soft: #fffbeb;
+  --danger: #dc2626;
+  --danger-soft: #fef2f2;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e2e8f0;
+}
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f1f5f9;
-  color: #1e293b;
-  font-size: 13px;
-  line-height: 1.45;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13.5px;
+  line-height: 1.5;
 }
-.wf-banner {
-  background: #0f172a;
-  color: #e2e8f0;
-  padding: 6px 20px;
-  font-size: 11px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #334155;
-}
-.wf-banner strong { color: #38bdf8; letter-spacing: 0.5px; }
-.layout { display: flex; min-height: calc(100vh - 30px); }
+.layout { display: flex; min-height: 100vh; }
 .sidebar {
-  width: 240px;
-  background: #ffffff;
-  border-right: 2px solid #cbd5e1;
-  padding: 16px 12px;
+  width: 248px;
+  background: #0f2942;
+  color: #cbd5e1;
+  padding: 20px 14px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-shrink: 0;
 }
 .brand {
-  border: 2px dashed #64748b;
-  background: #f8fafc;
-  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   margin-bottom: 16px;
-  border-radius: 4px;
 }
-.brand-title { font-weight: 700; font-size: 14px; color: #0f172a; }
-.brand-sub { font-size: 11px; color: #475569; margin-top: 2px; }
-.nav-group-label {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #64748b;
-  margin: 12px 8px 6px;
-  letter-spacing: 0.6px;
+.brand-icon {
+  width: 36px; height: 36px;
+  background: #1e6091;
+  color: #ffffff;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 15px;
+}
+.brand-title { font-weight: 700; font-size: 15px; color: #ffffff; line-height: 1.2; }
+.brand-sub { font-size: 11px; color: #94a3b8; }
+.nav-label {
+  font-size: 10.5px; font-weight: 600; text-transform: uppercase;
+  color: #64748b; margin: 14px 10px 6px; letter-spacing: 0.7px;
 }
 .nav-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 10px;
-  margin-bottom: 4px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #334155;
-  text-decoration: none;
-  font-weight: 500;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 12px; margin-bottom: 4px;
+  border-radius: 8px; color: #cbd5e1;
+  text-decoration: none; font-weight: 500; font-size: 13px;
+  transition: background 0.15s;
 }
+.nav-item:hover { background: rgba(255,255,255,0.08); color: #ffffff; }
 .nav-item.active {
-  background: #e2e8f0;
-  border: 1.5px solid #0f172a;
-  color: #0f172a;
-  font-weight: 700;
+  background: #1e6091;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
 }
+.nav-left { display: flex; align-items: center; gap: 10px; }
 .nav-badge {
-  font-size: 10px;
-  background: #cbd5e1;
-  color: #0f172a;
-  padding: 1px 6px;
-  border-radius: 10px;
-  font-weight: 700;
+  font-size: 11px; background: rgba(255,255,255,0.15); color: #ffffff;
+  padding: 1px 7px; border-radius: 12px; font-weight: 600;
 }
 .user-box {
-  border-top: 1px solid #cbd5e1;
-  padding-top: 12px;
-  font-size: 12px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 14px;
+  display: flex; align-items: center; gap: 10px;
 }
-.main { flex: 1; padding: 20px 24px; }
+.avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: #1e6091; color: #fff;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px;
+}
+.main { flex: 1; padding: 22px 28px; min-width: 0; }
 .topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffffff;
-  border: 1.5px solid #cbd5e1;
-  padding: 12px 16px;
-  border-radius: 4px;
-  margin-bottom: 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px;
 }
-.breadcrumb { font-size: 11px; color: #64748b; margin-bottom: 2px; }
-.page-title { font-size: 18px; font-weight: 700; color: #0f172a; }
+.breadcrumb { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+.page-title { font-size: 20px; font-weight: 700; color: #0f172a; }
 .btn {
-  display: inline-block;
-  padding: 7px 14px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 600;
-  border: 1.5px solid #334155;
-  background: #ffffff;
-  color: #0f172a;
-  cursor: pointer;
-  text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 8px 15px; border-radius: 8px;
+  font-size: 12.5px; font-weight: 600;
+  border: 1px solid #cbd5e1; background: #ffffff; color: #334155;
+  cursor: pointer; text-decoration: none;
+  box-shadow: 0 1px 2px rgba(15,23,42,0.04);
 }
 .btn-primary {
-  background: #0f172a;
-  color: #ffffff;
-  border-color: #0f172a;
+  background: var(--primary); color: #ffffff; border-color: var(--primary);
 }
-.btn-sm { padding: 4px 9px; font-size: 11px; }
+.btn-success {
+  background: var(--success); color: #ffffff; border-color: var(--success);
+}
+.btn-soft-blue {
+  background: var(--primary-soft); color: var(--primary); border-color: transparent;
+}
+.btn-soft-red {
+  background: var(--danger-soft); color: var(--danger); border-color: transparent;
+}
+.btn-sm { padding: 5px 10px; font-size: 11.5px; border-radius: 6px; }
 .card {
-  background: #ffffff;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 4px;
-  padding: 16px;
-  margin-bottom: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.04);
 }
 .card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #e2e8f0;
-  padding-bottom: 10px;
-  margin-bottom: 12px;
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 14px;
 }
-.card-title { font-size: 14px; font-weight: 700; color: #0f172a; }
-.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
-.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.card-title { font-size: 15px; font-weight: 700; color: #0f172a; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .kpi-box {
-  background: #ffffff;
-  border: 1.5px solid #cbd5e1;
-  border-left: 4px solid #0f172a;
-  padding: 12px 14px;
-  border-radius: 4px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px 18px;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.04);
 }
-.kpi-label { font-size: 11px; color: #64748b; text-transform: uppercase; font-weight: 600; }
-.kpi-val { font-size: 22px; font-weight: 700; color: #0f172a; margin: 4px 0; }
-.kpi-sub { font-size: 11px; color: #475569; }
-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-th, td { border: 1px solid #cbd5e1; padding: 7px 9px; text-align: left; }
-th { background: #f8fafc; font-weight: 700; color: #0f172a; }
-tr:nth-child(even) td { background: #fcfcfd; }
+.kpi-label { font-size: 11.5px; color: var(--muted); font-weight: 600; }
+.kpi-val { font-size: 24px; font-weight: 700; color: #0f172a; margin: 4px 0; }
+.kpi-sub { font-size: 11.5px; color: var(--muted); }
+table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 12.5px; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th {
+  background: #f8fafc; font-weight: 600; color: #475569; font-size: 11.5px;
+  text-transform: uppercase; letter-spacing: 0.4px;
+  border-top: 1px solid var(--border);
+}
+tr:hover td { background: #f8fafc; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
-.tag {
-  display: inline-block;
-  padding: 2px 6px;
-  font-size: 10px;
-  border: 1px solid #94a3b8;
-  background: #f1f5f9;
-  border-radius: 3px;
-  margin: 1px 2px 1px 0;
-  font-weight: 600;
+.badge {
+  display: inline-block; padding: 3px 9px; font-size: 11px;
+  border-radius: 20px; font-weight: 600; margin: 1px 2px 1px 0;
 }
-.tag-dark { background: #0f172a; color: #ffffff; border-color: #0f172a; }
+.badge-slate { background: #f1f5f9; color: #334155; }
+.badge-blue { background: var(--primary-soft); color: var(--primary); }
+.badge-green { background: var(--success-soft); color: var(--success); }
+.badge-amber { background: var(--warning-soft); color: var(--warning); }
 .form-control {
-  width: 100%;
-  padding: 6px 9px;
-  border: 1.5px solid #94a3b8;
-  border-radius: 4px;
-  background: #ffffff;
-  font-size: 12px;
+  width: 100%; padding: 8px 11px;
+  border: 1px solid #cbd5e1; border-radius: 8px;
+  background: #ffffff; font-size: 12.5px; color: var(--text);
 }
-.form-label { display: block; font-size: 11px; font-weight: 700; margin-bottom: 4px; color: #334155; }
-.wire-note {
-  background: #fffbeb;
-  border: 1px dashed #b45309;
-  color: #78350f;
-  padding: 8px 12px;
-  font-size: 11px;
-  border-radius: 4px;
-  margin-bottom: 12px;
+.form-label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 5px; color: #334155; }
+.tabs { display: flex; gap: 6px; margin-bottom: 14px; background: #f1f5f9; padding: 4px; border-radius: 9px; width: fit-content; }
+.tab { padding: 6px 14px; font-weight: 600; font-size: 12px; border-radius: 7px; color: #475569; cursor: pointer; }
+.tab.active { background: #ffffff; color: var(--primary); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.stepper { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 18px; }
+.step-item {
+  background: #ffffff; border: 1px solid var(--border); border-radius: 10px;
+  padding: 11px 14px; display: flex; align-items: center; gap: 10px;
 }
-.stepper { display: flex; gap: 8px; margin-bottom: 16px; }
-.step-box {
-  flex: 1;
-  border: 1.5px solid #cbd5e1;
-  background: #f8fafc;
-  padding: 10px 12px;
-  border-radius: 4px;
+.step-num {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--primary-soft); color: var(--primary);
+  display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; flex-shrink: 0;
 }
-.step-box.active { border-color: #0f172a; background: #e2e8f0; }
-.step-num { font-size: 10px; font-weight: 700; color: #475569; text-transform: uppercase; }
-.step-name { font-size: 13px; font-weight: 700; color: #0f172a; margin-top: 2px; }
-.tabs { display: flex; border-bottom: 2px solid #cbd5e1; margin-bottom: 12px; gap: 4px; }
-.tab { padding: 7px 14px; border: 1.5px solid #cbd5e1; border-bottom: none; background: #f8fafc; font-weight: 600; font-size: 12px; border-radius: 4px 4px 0 0; }
-.tab.active { background: #0f172a; color: #ffffff; border-color: #0f172a; }
+.step-item.active { border-color: var(--primary); background: var(--primary-soft); }
+.step-item.active .step-num { background: var(--primary); color: #ffffff; }
 
-.login-wrap {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  max-width: 980px;
-  margin: 48px auto;
-  background: #ffffff;
-  border: 2px solid #0f172a;
-  border-radius: 6px;
-  overflow: hidden;
-}
-.login-left {
-  background: #f8fafc;
-  border-right: 2px solid #cbd5e1;
-  padding: 36px;
+body {
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f2942 0%, #1e4e79 100%);
 }
-.login-right { padding: 36px; }
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 34px 32px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+.login-logo {
+  width: 48px; height: 48px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 18px;
+  margin: 0 auto 14px;
+}
 </style>
 </head>
 <body>
-<div class="wf-banner">
-  <span><strong>WIREFRAME 01</strong> | Halaman Autentikasi Pengguna (Login)</span>
-  <span>Route: GET /login &bull; POST /login</span>
-</div>
-<div class="login-wrap">
-  <div class="login-left">
-    <div>
-      <div class="tag tag-dark" style="margin-bottom:12px;">SISTEM PENDUKUNG KEPUTUSAN</div>
-      <h1 style="font-size:22px; margin-bottom:10px;">Pemilihan Supplier Terbaik Bahan Baku Ikan Pindang</h1>
-      <p style="color:#475569; margin-bottom:20px;">
-        Aplikasi berbasis web menggunakan metode <strong>TOPSIS</strong> untuk mengevaluasi gudang ikan beku di Muara Baru bagi kebutuhan produksi harian <strong>Rumah Cue — Pasar Kebayoran Lama</strong> (~3,5 ton/hari).
-      </p>
-      <div class="card" style="margin-bottom:12px;">
-        <div style="font-weight:700; margin-bottom:6px;">Cakupan 8 Jenis Ikan Bahan Baku:</div>
-        <div>
-          <span class="tag">Cakalang</span><span class="tag">Maesang</span><span class="tag">Layang</span><span class="tag">Bandeng</span>
-          <span class="tag">Salem</span><span class="tag">Kembung Banjar</span><span class="tag">Deho</span><span class="tag">Cucut</span>
-        </div>
-      </div>
-      <div class="card" style="margin-bottom:0;">
-        <div style="font-weight:700; margin-bottom:4px;">5 Kriteria Evaluasi TOPSIS:</div>
-        <div style="font-size:12px; color:#475569;">
-          C1 Kualitas &amp; Kesegaran (Benefit) &bull; C2 Harga/kg (Cost) &bull; C3 Ketepatan Waktu (Benefit) &bull; C4 Ketersediaan Stok (Benefit) &bull; C5 Responsivitas (Benefit)
-        </div>
-      </div>
-    </div>
-    <div style="font-size:11px; color:#64748b; margin-top:20px;">
-      &copy; 2026 Rumah Cue Pasar Kebayoran Lama &bull; Akses Terbatas Pemilik / Admin
-    </div>
+<div class="login-card">
+  <div style="text-align:center; margin-bottom:24px;">
+    <div class="login-logo">RC</div>
+    <h1 style="font-size:19px; font-weight:700; color:#0f172a;">SPK Rumah Cue</h1>
+    <p style="font-size:12.5px; color:#64748b; margin-top:3px;">Masuk untuk mengelola penilaian supplier</p>
   </div>
-  <div class="login-right">
-    <h2 style="font-size:18px; margin-bottom:4px;">Masuk ke Sistem</h2>
-    <p style="color:#64748b; margin-bottom:18px; font-size:12px;">Silakan masukkan kredensial akun Pemilik/Admin Rumah Cue.</p>
-    <div class="wire-note">
-      <strong>Alur Validasi:</strong> Jika email/password salah, tampilkan alert error. Jika valid, redirect ke <code>02_dashboard</code>.
-    </div>
-    <div style="margin-bottom:14px;">
-      <label class="form-label">Email / Username *</label>
-      <input class="form-control" type="text" value="admin@rumahcue.id" readonly>
-    </div>
-    <div style="margin-bottom:14px;">
-      <label class="form-label">Kata Sandi (Password) *</label>
-      <input class="form-control" type="password" value="••••••••••" readonly>
-    </div>
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; font-size:12px;">
-      <label><input type="checkbox" checked> Ingat sesi saya</label>
-      <span style="color:#64748b;">Role: Pemilik / Admin</span>
-    </div>
-    <a href="02_dashboard.html" class="btn btn-primary" style="width:100%; text-align:center; padding:10px;">MASUK KE DASHBOARD</a>
-    <div style="margin-top:20px; padding:10px; border:1px dashed #94a3b8; font-size:11px; color:#475569;">
-      <strong>Catatan Implementasi:</strong> Menggunakan Laravel Auth (session + bcrypt password hashing) pada tabel <code>users</code>.
-    </div>
+  <div style="margin-bottom:14px;">
+    <label class="form-label">Email atau Username</label>
+    <input class="form-control" type="text" placeholder="Masukkan email atau username" value="admin@rumahcue.id">
+  </div>
+  <div style="margin-bottom:14px;">
+    <label class="form-label">Kata Sandi</label>
+    <input class="form-control" type="password" placeholder="Masukkan kata sandi" value="••••••••••">
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; font-size:12px; color:#475569;">
+    <label style="display:flex; align-items:center; gap:6px; cursor:pointer;"><input type="checkbox" checked> Ingat saya</label>
+  </div>
+  <a href="02_dashboard.html" class="btn btn-primary" style="width:100%; padding:10px; font-size:13.5px;">Masuk</a>
+  <div style="text-align:center; margin-top:18px; font-size:11px; color:#94a3b8;">
+    Rumah Cue &bull; Pasar Kebayoran Lama
   </div>
 </div>
 </body>
