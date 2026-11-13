@@ -9,7 +9,7 @@
 
 ## Protokol Wajib Setiap Membuka New Conversation
 1. **Baca `C:\Skripsi_maul\task.md` terlebih dahulu** sebelum melakukan tindakan apa pun.
-2. Laporkan secara singkat posisi Phase saat ini, apa yang sudah selesai, dan berikan saran apa yang harus diubah, diselesaikan, atau dicek berikutnya.
+2. Jika user membuka percakapan dengan sapaan singkat (seperti `"halo"`, `"malam"`, `"pagi"`, atau sapaan lainnya), **langsung balas salam dengan ramah lalu lanjutkan dengan kalimat `"Mari kita mengerjakan..."`** yang langsung menyebutkan konteks Phase saat ini, tujuan akhir skripsi (selesai sampai BAB V & siap sidang), progres terakhir di `task.md`, saran model yang cocok, serta hal apa yang perlu didiskusikan/diubah/diselesaikan/dicek berikutnya.
 3. **Aturan Per-Phase & Hemat Token**:
    - Kerjakan **1 Phase per Conversation**. Jangan melompat ke phase berikutnya sebelum user memberikan **Approve** eksplisit pada phase yang sedang berjalan.
    - Setelah user memberi Approve dan progres di-commit ke GitHub, **ingatkan user untuk membuka New Conversation** untuk phase berikutnya agar tidak boros token.
