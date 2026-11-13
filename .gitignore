@@ -1,0 +1,19 @@
+# Larangan mutlak: jangan pernah melacak atau meng-upload Folder Ori
+Folder Ori/
+
+# File temporary Microsoft Word
+~$*.docx
+*.tmp
+
+# Environment & dependencies (untuk folder app/ Laravel nantinya)
+app/.env
+app/vendor/
+app/node_modules/
+app/public/hot
+app/public/storage
+app/storage/*.key
+app/bootstrap/cache/*.php
+
+# OS & IDE files
+.DS_Store
+Thumbs.db
