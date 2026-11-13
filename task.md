@@ -27,8 +27,8 @@
 ### Phase 1: Data Riil, Wireframe (HTML & IMG), Pemodelan (UML/ERD), & BAB III *(New Conversation)*
 - [x] Kumpulkan/verifikasi data riil supplier Muara Baru, skor bobot 1–5 pemilik, dan hitung manual TOPSIS 5 kriteria di `docs/` (25 supplier dummy Muara Baru, bobot `[5,4,4,4,3]`, `docs/data_dan_perhitungan_topsis.md` & `docs/topsis_dataset.json`)
 - [x] Buat wireframe terpisah per halaman dalam format HTML (`wireframes/html/`) dan gambar (`wireframes/img/`) (7 halaman: `01_login` s.d. `07_cetak_laporan_pdf`)
-- [ ] Review & approval wireframe oleh user
-- [ ] Buat pemodelan ERD, LRS, dan UML (Use Case, Activity, Sequence, Class Diagram) di `diagrams/`
+- [x] Review & approval wireframe oleh user (7 wireframe modern approved)
+- [x] Buat pemodelan ERD, LRS, dan UML (Use Case, Activity, Sequence, Class Diagram) di `diagrams/` (`diagrams/pemodelan_sistem.md`, `diagrams/html/`, `diagrams/img/`)
 - [ ] Tulis & update **BAB III** pada dokumen `.docx`
 - [ ] **Pengingat Wajib:** Ingatkan user untuk menginstal/menambahkan skill (Laravel, UI/Bootstrap, Testing) sebelum masuk Phase 2
 - [ ] **Approval User untuk Phase 1** → Commit → *Ganti ke New Conversation untuk Phase 2*
