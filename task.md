@@ -19,9 +19,9 @@
 - [x] Buat `.gitignore` (meng-ignore `Folder Ori/`) dan inisialisasi Git lokal
 - [x] Update `GEMINI.md` dan buat `task.md` sebagai memori lintas-conversation
 - [x] Hubungkan ke repository GitHub & push commit awal
-- [ ] Diskusi & konfirmasi poin kritis BAB I & BAB II (skala kriteria/sub-kriteria, mekanisme penilaian 8 jenis ikan vs harga C2, daftar supplier Muara Baru)
-- [ ] Audit & revisi BAB I pada `Skripsi_Maulana_BAB_I_II_Revisi (1).docx`
-- [ ] Audit & revisi BAB II pada `Skripsi_Maulana_BAB_I_II_Revisi (1).docx`
+- [x] Diskusi & konfirmasi poin kritis BAB I & BAB II (skala kriteria/sub-kriteria, mekanisme penilaian 8 jenis ikan vs harga C2, daftar supplier Muara Baru)
+- [x] Audit & revisi BAB I pada `Skripsi_Maulana_BAB_I_II_Revisi (1).docx`
+- [x] Audit & revisi BAB II pada `Skripsi_Maulana_BAB_I_II_Revisi (1).docx`
 - [ ] **Approval User untuk Phase 0** → Commit → *Ganti ke New Conversation untuk Phase 1*
 
 ### Phase 1: Data Riil, Wireframe (HTML & IMG), Pemodelan (UML/ERD), & BAB III *(New Conversation)*
