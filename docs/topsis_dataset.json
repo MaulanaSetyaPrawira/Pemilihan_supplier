@@ -1,0 +1,1102 @@
+{
+  "period": "November 2026",
+  "criteria": [
+    {
+      "code": "C1",
+      "name": "Kualitas dan kesegaran ikan",
+      "type": "benefit",
+      "likert": 5,
+      "weight": 0.25
+    },
+    {
+      "code": "C2",
+      "name": "Harga ikan per kilogram",
+      "type": "cost",
+      "likert": 4,
+      "weight": 0.2
+    },
+    {
+      "code": "C3",
+      "name": "Ketepatan waktu pengiriman",
+      "type": "benefit",
+      "likert": 4,
+      "weight": 0.2
+    },
+    {
+      "code": "C4",
+      "name": "Ketersediaan stok ikan",
+      "type": "benefit",
+      "likert": 4,
+      "weight": 0.2
+    },
+    {
+      "code": "C5",
+      "name": "Responsivitas dan kemudahan komunikasi",
+      "type": "benefit",
+      "likert": 3,
+      "weight": 0.15
+    }
+  ],
+  "sub_criteria": {
+    "C1": [
+      {
+        "score": 5,
+        "description": "Sangat Baik (Ikan beku sempurna, daging kenyal saat thawing, mata cerah, insang merah, bebas bau)"
+      },
+      {
+        "score": 4,
+        "description": "Baik (Ikan beku baik, tekstur cukup kenyal, kondisi fisik segar, bau normal)"
+      },
+      {
+        "score": 3,
+        "description": "Cukup (Ikan cukup segar, sedikit pelunakan tekstur saat thawing namun masih layak olah)"
+      },
+      {
+        "score": 2,
+        "description": "Kurang (Kesegaran menurun, daging mulai lembek saat thawing, berisiko hancur saat direbus)"
+      },
+      {
+        "score": 1,
+        "description": "Sangat Kurang (Ikan tidak segar, daging lembek/rusak, bau menyengat)"
+      }
+    ],
+    "C2": [
+      {
+        "score": 1,
+        "description": "Sangat Murah (>10% di bawah rata-rata harga pasar Muara Baru)"
+      },
+      {
+        "score": 2,
+        "description": "Murah (5% - 10% di bawah rata-rata harga pasar Muara Baru)"
+      },
+      {
+        "score": 3,
+        "description": "Normal (Sesuai / setara rata-rata harga pasar Muara Baru)"
+      },
+      {
+        "score": 4,
+        "description": "Mahal (5% - 10% di atas rata-rata harga pasar Muara Baru)"
+      },
+      {
+        "score": 5,
+        "description": "Sangat Mahal (>10% di atas rata-rata harga pasar Muara Baru)"
+      }
+    ],
+    "C3": [
+      {
+        "score": 5,
+        "description": "Sangat Tepat Waktu (Selalu tiba sesuai jadwal atau lebih awal, 0 keterlambatan)"
+      },
+      {
+        "score": 4,
+        "description": "Tepat Waktu (Umumnya tepat waktu, toleransi keterlambatan sangat jarang <30 menit)"
+      },
+      {
+        "score": 3,
+        "description": "Cukup Tepat (Sesekali terlambat 30-60 menit namun masih dalam hari yang sama)"
+      },
+      {
+        "score": 2,
+        "description": "Kurang Tepat (Sering terlambat >1 jam sehingga mengganggu jadwal produksi)"
+      },
+      {
+        "score": 1,
+        "description": "Tidak Tepat Waktu (Sangat sering terlambat atau mundur ke hari berikutnya)"
+      }
+    ],
+    "C4": [
+      {
+        "score": 5,
+        "description": "Sangat Lengkap (Stok 8 jenis ikan selalu tersedia dan mampu penuhi >=3,5 ton/hari)"
+      },
+      {
+        "score": 4,
+        "description": "Lengkap (Sebagian besar jenis ikan tersedia dengan volume memadai)"
+      },
+      {
+        "score": 3,
+        "description": "Cukup Tersedia (Stok tersedia namun beberapa jenis ikan kadang kosong)"
+      },
+      {
+        "score": 2,
+        "description": "Kurang Tersedia (Stok terbatas, sering kekurangan volume atau jenis ikan)"
+      },
+      {
+        "score": 1,
+        "description": "Sangat Terbatas (Stok tidak menentu dan sering kosong)"
+      }
+    ],
+    "C5": [
+      {
+        "score": 5,
+        "description": "Sangat Responsif (Respon cepat <15 menit, komunikatif, mudah dihubungi kapan saja)"
+      },
+      {
+        "score": 4,
+        "description": "Responsif (Respon baik 15-30 menit, kooperatif dalam koordinasi pengiriman)"
+      },
+      {
+        "score": 3,
+        "description": "Cukup Responsif (Respon standar 30-60 menit, komunikasi cukup jelas)"
+      },
+      {
+        "score": 2,
+        "description": "Kurang Responsif (Respon lambat >1 jam, sering perlu dihubungi berulang kali)"
+      },
+      {
+        "score": 1,
+        "description": "Tidak Responsif (Sulit dihubungi dan tidak kooperatif)"
+      }
+    ]
+  },
+  "divisors": [
+    19.621416870348583,
+    14.035668847618199,
+    19.924858845171276,
+    19.748417658131498,
+    18.681541692269406
+  ],
+  "a_plus": [
+    0.0637058989297032,
+    0.014249409997581931,
+    0.05018856132284956,
+    0.05063696835418333,
+    0.04014657956791419
+  ],
+  "a_minus": [
+    0.025482359571881278,
+    0.07124704998790965,
+    0.020075424529139824,
+    0.020254787341673335,
+    0.016058631827165677
+  ],
+  "suppliers": [
+    {
+      "code": "S01",
+      "name": "UD Mina Muara Jaya",
+      "address": "Jl. Muara Baru Ujung Blok A No. 12, Jakarta Utara",
+      "phone": "0812-8801-1101",
+      "scores": [
+        5,
+        2,
+        5,
+        4,
+        4
+      ],
+      "r": [
+        0.2548235957188128,
+        0.1424940999758193,
+        0.2509428066142478,
+        0.20254787341673333,
+        0.2141150910288757
+      ],
+      "y": [
+        0.0637058989297032,
+        0.028498819995163863,
+        0.05018856132284956,
+        0.04050957468334667,
+        0.03211726365433135
+      ],
+      "d_plus": 0.019237455701921837,
+      "d_minus": 0.06973798966506847,
+      "v": 0.7837891609019257,
+      "rank": 2
+    },
+    {
+      "code": "S02",
+      "name": "PT Samudra Beku Nusantara",
+      "address": "Jl. Muara Baru Raya Blok B No. 04, Jakarta Utara",
+      "phone": "0813-8801-1102",
+      "scores": [
+        5,
+        3,
+        4,
+        5,
+        4
+      ],
+      "r": [
+        0.2548235957188128,
+        0.21374114996372895,
+        0.20075424529139824,
+        0.25318484177091666,
+        0.2141150910288757
+      ],
+      "y": [
+        0.0637058989297032,
+        0.042748229992745794,
+        0.04015084905827965,
+        0.05063696835418333,
+        0.03211726365433135
+      ],
+      "d_plus": 0.031263530233535106,
+      "d_minus": 0.062106368042401924,
+      "v": 0.6651647821105934,
+      "rank": 6
+    },
+    {
+      "code": "S03",
+      "name": "CV Bahari Segar Abadi",
+      "address": "Jl. Muara Baru Ujung Blok C No. 18, Jakarta Utara",
+      "phone": "0812-8801-1103",
+      "scores": [
+        4,
+        2,
+        4,
+        4,
+        5
+      ],
+      "r": [
+        0.20385887657505022,
+        0.1424940999758193,
+        0.20075424529139824,
+        0.20254787341673333,
+        0.2676438637860946
+      ],
+      "y": [
+        0.050964719143762556,
+        0.028498819995163863,
+        0.04015084905827965,
+        0.04050957468334667,
+        0.04014657956791419
+      ],
+      "d_plus": 0.02384749709481584,
+      "d_minus": 0.06221149510746363,
+      "v": 0.7228936049034491,
+      "rank": 5
+    },
+    {
+      "code": "S04",
+      "name": "UD Bintang Laut Mandiri",
+      "address": "Jl. Tuna Raya Muara Baru No. 07, Jakarta Utara",
+      "phone": "0857-8801-1104",
+      "scores": [
+        4,
+        1,
+        3,
+        3,
+        3
+      ],
+      "r": [
+        0.20385887657505022,
+        0.07124704998790965,
+        0.15056568396854866,
+        0.15191090506255,
+        0.16058631827165676
+      ],
+      "y": [
+        0.050964719143762556,
+        0.014249409997581931,
+        0.030113136793709736,
+        0.03038218101251,
+        0.024087947740748513
+      ],
+      "d_plus": 0.03512116738919309,
+      "d_minus": 0.0645435612429944,
+      "v": 0.6476068527833182,
+      "rank": 8
+    },
+    {
+      "code": "S05",
+      "name": "PT Nelayan Makmur Sentosa",
+      "address": "Jl. Cakalang Muara Baru Blok D No. 09, Jakarta Utara",
+      "phone": "0811-8801-1105",
+      "scores": [
+        5,
+        4,
+        5,
+        5,
+        5
+      ],
+      "r": [
+        0.2548235957188128,
+        0.2849881999516386,
+        0.2509428066142478,
+        0.25318484177091666,
+        0.2676438637860946
+      ],
+      "y": [
+        0.0637058989297032,
+        0.056997639990327725,
+        0.05018856132284956,
+        0.05063696835418333,
+        0.04014657956791419
+      ],
+      "d_plus": 0.042748229992745794,
+      "d_minus": 0.06382939607510617,
+      "v": 0.5989005237785049,
+      "rank": 12
+    },
+    {
+      "code": "S06",
+      "name": "UD Cahaya Ikan Sejahtera",
+      "address": "Jl. Muara Baru Ujung Blok E No. 21, Jakarta Utara",
+      "phone": "0812-8801-1106",
+      "scores": [
+        3,
+        1,
+        4,
+        4,
+        3
+      ],
+      "r": [
+        0.15289415743128767,
+        0.07124704998790965,
+        0.20075424529139824,
+        0.20254787341673333,
+        0.16058631827165676
+      ],
+      "y": [
+        0.03822353935782192,
+        0.014249409997581931,
+        0.04015084905827965,
+        0.04050957468334667,
+        0.024087947740748513
+      ],
+      "d_plus": 0.03332491673780308,
+      "d_minus": 0.06548906489732756,
+      "v": 0.6627509975171842,
+      "rank": 7
+    },
+    {
+      "code": "S07",
+      "name": "CV Pelabuhan Baru Coldstorage",
+      "address": "Jl. Dermaga Barat Muara Baru No. 15, Jakarta Utara",
+      "phone": "0813-8801-1107",
+      "scores": [
+        4,
+        3,
+        5,
+        4,
+        4
+      ],
+      "r": [
+        0.20385887657505022,
+        0.21374114996372895,
+        0.2509428066142478,
+        0.20254787341673333,
+        0.2141150910288757
+      ],
+      "y": [
+        0.050964719143762556,
+        0.042748229992745794,
+        0.05018856132284956,
+        0.04050957468334667,
+        0.03211726365433135
+      ],
+      "d_plus": 0.033786897165301095,
+      "d_minus": 0.05510417828478113,
+      "v": 0.6199067567331379,
+      "rank": 11
+    },
+    {
+      "code": "S08",
+      "name": "UD Sinar Bahari Utama",
+      "address": "Jl. Muara Baru Raya Blok F No. 02, Jakarta Utara",
+      "phone": "0815-8801-1108",
+      "scores": [
+        3,
+        2,
+        3,
+        3,
+        4
+      ],
+      "r": [
+        0.15289415743128767,
+        0.1424940999758193,
+        0.15056568396854866,
+        0.15191090506255,
+        0.2141150910288757
+      ],
+      "y": [
+        0.03822353935782192,
+        0.028498819995163863,
+        0.030113136793709736,
+        0.03038218101251,
+        0.03211726365433135
+      ],
+      "d_plus": 0.04159501567437559,
+      "d_minus": 0.0495070525893151,
+      "v": 0.5434240246447452,
+      "rank": 17
+    },
+    {
+      "code": "S09",
+      "name": "PT Maritim Indo Beku",
+      "address": "Jl. Tongkol Muara Baru Blok G No. 11, Jakarta Utara",
+      "phone": "0812-8801-1109",
+      "scores": [
+        5,
+        3,
+        5,
+        4,
+        3
+      ],
+      "r": [
+        0.2548235957188128,
+        0.21374114996372895,
+        0.2509428066142478,
+        0.20254787341673333,
+        0.16058631827165676
+      ],
+      "y": [
+        0.0637058989297032,
+        0.042748229992745794,
+        0.05018856132284956,
+        0.04050957468334667,
+        0.024087947740748513
+      ],
+      "d_plus": 0.034243634442642217,
+      "d_minus": 0.060454520376965304,
+      "v": 0.638391745775051,
+      "rank": 9
+    },
+    {
+      "code": "S10",
+      "name": "UD Karya Samudra Jaya",
+      "address": "Jl. Muara Baru Ujung Blok H No. 06, Jakarta Utara",
+      "phone": "0856-8801-1110",
+      "scores": [
+        2,
+        1,
+        3,
+        4,
+        2
+      ],
+      "r": [
+        0.10192943828752511,
+        0.07124704998790965,
+        0.15056568396854866,
+        0.20254787341673333,
+        0.10705754551443784
+      ],
+      "y": [
+        0.025482359571881278,
+        0.014249409997581931,
+        0.030113136793709736,
+        0.04050957468334667,
+        0.016058631827165677
+      ],
+      "d_plus": 0.05046637454770537,
+      "d_minus": 0.06131674357163558,
+      "v": 0.5485331291812161,
+      "rank": 16
+    },
+    {
+      "code": "S11",
+      "name": "CV Sumber Rezeki Laut",
+      "address": "Jl. Muara Baru Raya Blok A No. 25, Jakarta Utara",
+      "phone": "0812-8801-1111",
+      "scores": [
+        4,
+        2,
+        5,
+        5,
+        4
+      ],
+      "r": [
+        0.20385887657505022,
+        0.1424940999758193,
+        0.2509428066142478,
+        0.25318484177091666,
+        0.2141150910288757
+      ],
+      "y": [
+        0.050964719143762556,
+        0.028498819995163863,
+        0.05018856132284956,
+        0.05063696835418333,
+        0.03211726365433135
+      ],
+      "d_plus": 0.02073290287579057,
+      "d_minus": 0.0675612270733547,
+      "v": 0.7651836776948583,
+      "rank": 4
+    },
+    {
+      "code": "S12",
+      "name": "UD Mutiara Pesisir",
+      "address": "Jl. Cakalang Muara Baru Blok B No. 14, Jakarta Utara",
+      "phone": "0813-8801-1112",
+      "scores": [
+        3,
+        3,
+        4,
+        3,
+        3
+      ],
+      "r": [
+        0.15289415743128767,
+        0.21374114996372895,
+        0.20075424529139824,
+        0.15191090506255,
+        0.16058631827165676
+      ],
+      "y": [
+        0.03822353935782192,
+        0.042748229992745794,
+        0.04015084905827965,
+        0.03038218101251,
+        0.024087947740748513
+      ],
+      "d_plus": 0.04722737685273836,
+      "d_minus": 0.03930110800071443,
+      "v": 0.4541984996880039,
+      "rank": 22
+    },
+    {
+      "code": "S13",
+      "name": "PT Nusantara Fish Supply",
+      "address": "Jl. Dermaga Timur Muara Baru No. 03, Jakarta Utara",
+      "phone": "0811-8801-1113",
+      "scores": [
+        5,
+        4,
+        4,
+        5,
+        4
+      ],
+      "r": [
+        0.2548235957188128,
+        0.2849881999516386,
+        0.20075424529139824,
+        0.25318484177091666,
+        0.2141150910288757
+      ],
+      "y": [
+        0.0637058989297032,
+        0.056997639990327725,
+        0.04015084905827965,
+        0.05063696835418333,
+        0.03211726365433135
+      ],
+      "d_plus": 0.04463895999078723,
+      "d_minus": 0.0569917879661686,
+      "v": 0.5607730840503763,
+      "rank": 15
+    },
+    {
+      "code": "S14",
+      "name": "UD Berkah Nelayan Baru",
+      "address": "Jl. Muara Baru Ujung Blok J No. 19, Jakarta Utara",
+      "phone": "0812-8801-1114",
+      "scores": [
+        4,
+        2,
+        3,
+        4,
+        3
+      ],
+      "r": [
+        0.20385887657505022,
+        0.1424940999758193,
+        0.15056568396854866,
+        0.20254787341673333,
+        0.16058631827165676
+      ],
+      "y": [
+        0.050964719143762556,
+        0.028498819995163863,
+        0.030113136793709736,
+        0.04050957468334667,
+        0.024087947740748513
+      ],
+      "d_plus": 0.033598359727323,
+      "d_minus": 0.055247115840251444,
+      "v": 0.6218337567255339,
+      "rank": 10
+    },
+    {
+      "code": "S15",
+      "name": "CV Agung Lautan Beku",
+      "address": "Jl. Tuna Raya Muara Baru No. 22, Jakarta Utara",
+      "phone": "0857-8801-1115",
+      "scores": [
+        3,
+        2,
+        4,
+        2,
+        4
+      ],
+      "r": [
+        0.15289415743128767,
+        0.1424940999758193,
+        0.20075424529139824,
+        0.10127393670836667,
+        0.2141150910288757
+      ],
+      "y": [
+        0.03822353935782192,
+        0.028498819995163863,
+        0.04015084905827965,
+        0.020254787341673335,
+        0.03211726365433135
+      ],
+      "d_plus": 0.044053363540746494,
+      "d_minus": 0.051484474902984106,
+      "v": 0.5388909330757695,
+      "rank": 18
+    },
+    {
+      "code": "S16",
+      "name": "UD Putra Muara Sejati",
+      "address": "Jl. Muara Baru Raya Blok K No. 08, Jakarta Utara",
+      "phone": "0813-8801-1116",
+      "scores": [
+        4,
+        3,
+        4,
+        3,
+        5
+      ],
+      "r": [
+        0.20385887657505022,
+        0.21374114996372895,
+        0.20075424529139824,
+        0.15191090506255,
+        0.2676438637860946
+      ],
+      "y": [
+        0.050964719143762556,
+        0.042748229992745794,
+        0.04015084905827965,
+        0.03038218101251,
+        0.04014657956791419
+      ],
+      "d_plus": 0.03854260605118862,
+      "d_minus": 0.05047127291259577,
+      "v": 0.5670045334518024,
+      "rank": 14
+    },
+    {
+      "code": "S17",
+      "name": "PT Prima Coldchain Jakarta",
+      "address": "Jl. Tongkol Muara Baru Blok C No. 30, Jakarta Utara",
+      "phone": "0812-8801-1117",
+      "scores": [
+        5,
+        5,
+        5,
+        5,
+        4
+      ],
+      "r": [
+        0.2548235957188128,
+        0.35623524993954825,
+        0.2509428066142478,
+        0.25318484177091666,
+        0.2141150910288757
+      ],
+      "y": [
+        0.0637058989297032,
+        0.07124704998790965,
+        0.05018856132284956,
+        0.05063696835418333,
+        0.03211726365433135
+      ],
+      "d_plus": 0.05756041068744315,
+      "d_minus": 0.059571776436774304,
+      "v": 0.5085858797599251,
+      "rank": 19
+    },
+    {
+      "code": "S18",
+      "name": "UD Harapan Laut Nusantara",
+      "address": "Jl. Muara Baru Ujung Blok L No. 05, Jakarta Utara",
+      "phone": "0815-8801-1118",
+      "scores": [
+        2,
+        2,
+        2,
+        3,
+        3
+      ],
+      "r": [
+        0.10192943828752511,
+        0.1424940999758193,
+        0.10037712264569912,
+        0.15191090506255,
+        0.16058631827165676
+      ],
+      "y": [
+        0.025482359571881278,
+        0.028498819995163863,
+        0.020075424529139824,
+        0.03038218101251,
+        0.024087947740748513
+      ],
+      "d_plus": 0.05691240392297354,
+      "d_minus": 0.044659211637879455,
+      "v": 0.43968200556112536,
+      "rank": 23
+    },
+    {
+      "code": "S19",
+      "name": "CV Mitra Pindang Sejahtera",
+      "address": "Jl. Dermaga Barat Muara Baru No. 19, Jakarta Utara",
+      "phone": "0812-8801-1119",
+      "scores": [
+        4,
+        1,
+        4,
+        5,
+        4
+      ],
+      "r": [
+        0.20385887657505022,
+        0.07124704998790965,
+        0.20075424529139824,
+        0.25318484177091666,
+        0.2141150910288757
+      ],
+      "y": [
+        0.050964719143762556,
+        0.014249409997581931,
+        0.04015084905827965,
+        0.05063696835418333,
+        0.03211726365433135
+      ],
+      "d_plus": 0.018098708348500296,
+      "d_minus": 0.0740409404524296,
+      "v": 0.8035730699646682,
+      "rank": 1
+    },
+    {
+      "code": "S20",
+      "name": "UD Sentosa Fishindo",
+      "address": "Jl. Muara Baru Raya Blok M No. 17, Jakarta Utara",
+      "phone": "0856-8801-1120",
+      "scores": [
+        3,
+        4,
+        3,
+        3,
+        2
+      ],
+      "r": [
+        0.15289415743128767,
+        0.2849881999516386,
+        0.15056568396854866,
+        0.15191090506255,
+        0.10705754551443784
+      ],
+      "y": [
+        0.03822353935782192,
+        0.056997639990327725,
+        0.030113136793709736,
+        0.03038218101251,
+        0.016058631827165677
+      ],
+      "d_plus": 0.062211495107463634,
+      "d_minus": 0.023847497094815838,
+      "v": 0.2771063950965508,
+      "rank": 25
+    },
+    {
+      "code": "S21",
+      "name": "PT Pasifik Beku Mandiri",
+      "address": "Jl. Cakalang Muara Baru Blok E No. 27, Jakarta Utara",
+      "phone": "0811-8801-1121",
+      "scores": [
+        5,
+        2,
+        4,
+        4,
+        5
+      ],
+      "r": [
+        0.2548235957188128,
+        0.1424940999758193,
+        0.20075424529139824,
+        0.20254787341673333,
+        0.2676438637860946
+      ],
+      "y": [
+        0.0637058989297032,
+        0.028498819995163863,
+        0.04015084905827965,
+        0.04050957468334667,
+        0.04014657956791419
+      ],
+      "d_plus": 0.020158508262011543,
+      "d_minus": 0.06842483785288997,
+      "v": 0.7724345585696895,
+      "rank": 3
+    },
+    {
+      "code": "S22",
+      "name": "UD Rizki Bahari Jaya",
+      "address": "Jl. Muara Baru Ujung Blok N No. 10, Jakarta Utara",
+      "phone": "0812-8801-1122",
+      "scores": [
+        3,
+        3,
+        3,
+        5,
+        3
+      ],
+      "r": [
+        0.15289415743128767,
+        0.21374114996372895,
+        0.15056568396854866,
+        0.25318484177091666,
+        0.16058631827165676
+      ],
+      "y": [
+        0.03822353935782192,
+        0.042748229992745794,
+        0.030113136793709736,
+        0.05063696835418333,
+        0.024087947740748513
+      ],
+      "d_plus": 0.046069900332571245,
+      "d_minus": 0.04541831027325597,
+      "v": 0.49643893975518544,
+      "rank": 20
+    },
+    {
+      "code": "S23",
+      "name": "CV Lautan Mas Abadi",
+      "address": "Jl. Tuna Raya Muara Baru No. 13, Jakarta Utara",
+      "phone": "0813-8801-1123",
+      "scores": [
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "r": [
+        0.20385887657505022,
+        0.2849881999516386,
+        0.20075424529139824,
+        0.20254787341673333,
+        0.16058631827165676
+      ],
+      "y": [
+        0.050964719143762556,
+        0.056997639990327725,
+        0.04015084905827965,
+        0.04050957468334667,
+        0.024087947740748513
+      ],
+      "d_plus": 0.049507052589315106,
+      "d_minus": 0.04159501567437559,
+      "v": 0.4565759753552549,
+      "rank": 21
+    },
+    {
+      "code": "S24",
+      "name": "UD Aneka Ikan Muara",
+      "address": "Jl. Muara Baru Raya Blok P No. 01, Jakarta Utara",
+      "phone": "0857-8801-1124",
+      "scores": [
+        2,
+        3,
+        2,
+        2,
+        3
+      ],
+      "r": [
+        0.10192943828752511,
+        0.21374114996372895,
+        0.10037712264569912,
+        0.10127393670836667,
+        0.16058631827165676
+      ],
+      "y": [
+        0.025482359571881278,
+        0.042748229992745794,
+        0.020075424529139824,
+        0.020254787341673335,
+        0.024087947740748513
+      ],
+      "d_plus": 0.06603771111228621,
+      "d_minus": 0.029608320708153404,
+      "v": 0.30956141247697944,
+      "rank": 24
+    },
+    {
+      "code": "S25",
+      "name": "PT Delta Samudra Utama",
+      "address": "Jl. Dermaga Timur Muara Baru No. 28, Jakarta Utara",
+      "phone": "0812-8801-1125",
+      "scores": [
+        4,
+        3,
+        5,
+        3,
+        4
+      ],
+      "r": [
+        0.20385887657505022,
+        0.21374114996372895,
+        0.2509428066142478,
+        0.15191090506255,
+        0.2141150910288757
+      ],
+      "y": [
+        0.050964719143762556,
+        0.042748229992745794,
+        0.05018856132284956,
+        0.03038218101251,
+        0.03211726365433135
+      ],
+      "d_plus": 0.038068973295203784,
+      "d_minus": 0.05223770818813395,
+      "v": 0.5784478770573825,
+      "rank": 13
+    }
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "code": "S19",
+      "name": "CV Mitra Pindang Sejahtera",
+      "v": 0.8035730699646682
+    },
+    {
+      "rank": 2,
+      "code": "S01",
+      "name": "UD Mina Muara Jaya",
+      "v": 0.7837891609019257
+    },
+    {
+      "rank": 3,
+      "code": "S21",
+      "name": "PT Pasifik Beku Mandiri",
+      "v": 0.7724345585696895
+    },
+    {
+      "rank": 4,
+      "code": "S11",
+      "name": "CV Sumber Rezeki Laut",
+      "v": 0.7651836776948583
+    },
+    {
+      "rank": 5,
+      "code": "S03",
+      "name": "CV Bahari Segar Abadi",
+      "v": 0.7228936049034491
+    },
+    {
+      "rank": 6,
+      "code": "S02",
+      "name": "PT Samudra Beku Nusantara",
+      "v": 0.6651647821105934
+    },
+    {
+      "rank": 7,
+      "code": "S06",
+      "name": "UD Cahaya Ikan Sejahtera",
+      "v": 0.6627509975171842
+    },
+    {
+      "rank": 8,
+      "code": "S04",
+      "name": "UD Bintang Laut Mandiri",
+      "v": 0.6476068527833182
+    },
+    {
+      "rank": 9,
+      "code": "S09",
+      "name": "PT Maritim Indo Beku",
+      "v": 0.638391745775051
+    },
+    {
+      "rank": 10,
+      "code": "S14",
+      "name": "UD Berkah Nelayan Baru",
+      "v": 0.6218337567255339
+    },
+    {
+      "rank": 11,
+      "code": "S07",
+      "name": "CV Pelabuhan Baru Coldstorage",
+      "v": 0.6199067567331379
+    },
+    {
+      "rank": 12,
+      "code": "S05",
+      "name": "PT Nelayan Makmur Sentosa",
+      "v": 0.5989005237785049
+    },
+    {
+      "rank": 13,
+      "code": "S25",
+      "name": "PT Delta Samudra Utama",
+      "v": 0.5784478770573825
+    },
+    {
+      "rank": 14,
+      "code": "S16",
+      "name": "UD Putra Muara Sejati",
+      "v": 0.5670045334518024
+    },
+    {
+      "rank": 15,
+      "code": "S13",
+      "name": "PT Nusantara Fish Supply",
+      "v": 0.5607730840503763
+    },
+    {
+      "rank": 16,
+      "code": "S10",
+      "name": "UD Karya Samudra Jaya",
+      "v": 0.5485331291812161
+    },
+    {
+      "rank": 17,
+      "code": "S08",
+      "name": "UD Sinar Bahari Utama",
+      "v": 0.5434240246447452
+    },
+    {
+      "rank": 18,
+      "code": "S15",
+      "name": "CV Agung Lautan Beku",
+      "v": 0.5388909330757695
+    },
+    {
+      "rank": 19,
+      "code": "S17",
+      "name": "PT Prima Coldchain Jakarta",
+      "v": 0.5085858797599251
+    },
+    {
+      "rank": 20,
+      "code": "S22",
+      "name": "UD Rizki Bahari Jaya",
+      "v": 0.49643893975518544
+    },
+    {
+      "rank": 21,
+      "code": "S23",
+      "name": "CV Lautan Mas Abadi",
+      "v": 0.4565759753552549
+    },
+    {
+      "rank": 22,
+      "code": "S12",
+      "name": "UD Mutiara Pesisir",
+      "v": 0.4541984996880039
+    },
+    {
+      "rank": 23,
+      "code": "S18",
+      "name": "UD Harapan Laut Nusantara",
+      "v": 0.43968200556112536
+    },
+    {
+      "rank": 24,
+      "code": "S24",
+      "name": "UD Aneka Ikan Muara",
+      "v": 0.30956141247697944
+    },
+    {
+      "rank": 25,
+      "code": "S20",
+      "name": "UD Sentosa Fishindo",
+      "v": 0.2771063950965508
+    }
+  ]
+}
