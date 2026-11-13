@@ -20,6 +20,9 @@
    - Sebelum coding sistem, buat **wireframe terpisah** dalam format HTML dan gambar (`wireframes/html/` dan `wireframes/img/`).
    - Saat implementasi website dimulai, **selalu lakukan pengujian (automated test)** pada setiap fitur agar bebas bug dan akurat.
    - Setiap progres wajib dicatat dan diperbarui di `task.md`.
+5. **Aturan Efisiensi Model & Token**:
+   - Sebelum mengerjakan tugas baru yang spesifik, **selalu beri saran model yang paling cocok** (misal: model ringan seperti *Flash* untuk tugas sederhana/format/commit, atau *Gemini 4 Hydrogen / Argon / Pro* atau *Claude* untuk penulisan bab skripsi, analisis mendalam, arsitektur, dan coding kompleks).
+   - Setelah tugas tersebut selesai dikerjakan, **ingatkan user kembali untuk mengganti model** jika perlu agar tetap hemat token.
 
 ## Konteks dan Tujuan Skripsi
 - **Judul Skripsi**: SISTEM PENDUKUNG KEPUTUSAN PEMILIHAN SUPPLIER TERBAIK UNTUK BAHAN BAKU IKAN PINDANG MENGGUNAKAN METODE TOPSIS BERBASIS WEBSITE (STUDI KASUS: RUMAH CUE DI PASAR KEBAYORAN LAMA)
