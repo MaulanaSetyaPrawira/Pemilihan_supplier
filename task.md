@@ -8,7 +8,7 @@
 ## Status Saat Ini
 - **Phase Aktif:** `Phase 0 — Setup Workspace & Pematangan BAB I – BAB II`
 - **Status Approval:** Menunggu diskusi & approval Phase 0 dari user.
-- **Status Git/GitHub:** Git lokal diinisialisasi; menunggu URL repository GitHub dari user untuk `git remote add origin` & `git push`.
+- **Status Git/GitHub:** Terhubung ke `https://github.com/MaulanaSetyaPrawira/Pemilihan_supplier.git` (branch `main` sudah di-push).
 
 ---
 
@@ -18,7 +18,7 @@
 - [x] Inisialisasi struktur folder rapi (`docs/`, `wireframes/html/`, `wireframes/img/`, `diagrams/`, `app/`)
 - [x] Buat `.gitignore` (meng-ignore `Folder Ori/`) dan inisialisasi Git lokal
 - [x] Update `GEMINI.md` dan buat `task.md` sebagai memori lintas-conversation
-- [ ] Hubungkan ke repository GitHub & push commit awal
+- [x] Hubungkan ke repository GitHub & push commit awal
 - [ ] Diskusi & konfirmasi poin kritis BAB I & BAB II (skala kriteria/sub-kriteria, mekanisme penilaian 8 jenis ikan vs harga C2, daftar supplier Muara Baru)
 - [ ] Audit & revisi BAB I pada `Skripsi_Maulana_BAB_I_II_Revisi (1).docx`
 - [ ] Audit & revisi BAB II pada `Skripsi_Maulana_BAB_I_II_Revisi (1).docx`
