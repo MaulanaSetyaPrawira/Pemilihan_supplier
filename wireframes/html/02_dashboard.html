@@ -6,25 +6,27 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg: #f7f8fa;
+  --bg: #f6f7fb;
   --surface: #ffffff;
-  --border: #e5e7eb;
-  --border-strong: #d1d5db;
-  --text: #111827;
-  --text-2: #4b5563;
-  --muted: #6b7280;
-  --accent: #1d4ed8;
-  --accent-hover: #1e40af;
-  --accent-soft: #eff6ff;
-  --emerald: #047857;
+  --border: rgba(15, 23, 42, 0.08);
+  --border-med: rgba(15, 23, 42, 0.14);
+  --text: #0f172a;
+  --text-2: #475569;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-2: #1d4ed8;
+  --primary-soft: #eff6ff;
+  --emerald: #059669;
   --emerald-soft: #ecfdf5;
-  --amber: #b45309;
-  --amber-soft: #fef3c7;
-  --rose: #be123c;
+  --amber: #d97706;
+  --amber-soft: #fffbeb;
+  --rose: #e11d48;
   --rose-soft: #fff1f2;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
 }
 body {
-  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Inter', 'Segoe UI', -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
   font-size: 13px;
@@ -33,190 +35,218 @@ body {
 }
 .app-shell { display: flex; min-height: 100vh; }
 
-/* Light, crisp enterprise sidebar */
+/* Modern Floating-feel Sidebar */
 .sidebar {
-  width: 244px;
+  width: 248px;
   background: #ffffff;
   border-right: 1px solid var(--border);
-  padding: 18px 14px;
+  padding: 20px 14px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-shrink: 0;
 }
 .brand {
-  display: flex; align-items: center; gap: 10px;
-  padding: 4px 8px 16px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 14px;
+  display: flex; align-items: center; gap: 11px;
+  padding: 4px 8px 18px;
+  margin-bottom: 10px;
 }
 .brand-mark {
-  width: 34px; height: 34px; border-radius: 8px;
-  background: #111827; color: #ffffff;
+  width: 36px; height: 36px; border-radius: 10px;
+  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
+  color: #ffffff;
   display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.22);
   flex-shrink: 0;
 }
-.brand-name { font-weight: 700; font-size: 14.5px; color: var(--text); letter-spacing: -0.2px; }
+.brand-name { font-weight: 700; font-size: 15px; color: var(--text); letter-spacing: -0.3px; }
 .brand-tag { font-size: 11px; color: var(--muted); }
 .nav-sec {
-  font-size: 10.5px; font-weight: 600; color: #9ca3af;
-  text-transform: uppercase; letter-spacing: 0.6px;
+  font-size: 10.5px; font-weight: 700; color: #94a3b8;
+  text-transform: uppercase; letter-spacing: 0.7px;
   margin: 14px 10px 6px;
 }
 .nav-link {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 8px 10px; margin-bottom: 2px;
-  border-radius: 7px; color: var(--text-2);
+  padding: 9px 11px; margin-bottom: 3px;
+  border-radius: 9px; color: var(--text-2);
   text-decoration: none; font-weight: 500; font-size: 13px;
 }
-.nav-link:hover { background: #f3f4f6; color: var(--text); }
 .nav-link.active {
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: linear-gradient(90deg, #eff6ff 0%, #f8fafc 100%);
+  color: var(--primary);
   font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--primary);
 }
-.nav-left { display: flex; align-items: center; gap: 9px; }
+.nav-left { display: flex; align-items: center; gap: 10px; }
 .nav-count {
   font-size: 11px; font-weight: 600;
-  color: var(--muted); background: #f3f4f6;
-  padding: 1px 7px; border-radius: 10px;
+  color: var(--muted); background: #f1f5f9;
+  padding: 1px 7px; border-radius: 99px;
 }
-.nav-link.active .nav-count { background: #dbeafe; color: var(--accent); }
+.nav-link.active .nav-count { background: #dbeafe; color: var(--primary); }
 .user-footer {
-  border-top: 1px solid var(--border);
-  padding-top: 12px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 10px 12px;
   display: flex; align-items: center; justify-content: space-between;
 }
 .user-info { display: flex; align-items: center; gap: 9px; }
 .avatar {
-  width: 32px; height: 32px; border-radius: 50%;
-  background: #e5e7eb; color: #374151;
+  width: 32px; height: 32px; border-radius: 9px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6); color: #ffffff;
   display: flex; align-items: center; justify-content: center;
   font-weight: 700; font-size: 11.5px;
 }
+.sup-avatar {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: #f1f5f9; color: #334155;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 11px; flex-shrink: 0;
+}
 
 /* Main Content */
-.main { flex: 1; padding: 22px 28px; min-width: 0; }
+.main { flex: 1; padding: 24px 30px; min-width: 0; }
 .header-bar {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  margin-bottom: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 22px;
 }
-.crumb { font-size: 11.5px; color: var(--muted); margin-bottom: 2px; }
-.h1 { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+.crumb { font-size: 11.5px; color: var(--muted); margin-bottom: 2px; font-weight: 500; }
+.h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.4px; }
 .actions { display: flex; gap: 8px; align-items: center; }
 
 /* Buttons */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  padding: 8px 14px; border-radius: 7px;
+  padding: 8px 15px; border-radius: 9px;
   font-size: 12.5px; font-weight: 600;
-  border: 1px solid var(--border-strong);
-  background: #ffffff; color: #374151;
+  border: 1px solid var(--border-med);
+  background: #ffffff; color: var(--text);
   cursor: pointer; text-decoration: none;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  box-shadow: var(--shadow-sm);
 }
-.btn-primary { background: var(--accent); color: #ffffff; border-color: var(--accent); }
-.btn-dark { background: #111827; color: #ffffff; border-color: #111827; }
-.btn-emerald { background: var(--emerald); color: #ffffff; border-color: var(--emerald); }
-.btn-ghost { background: transparent; border-color: transparent; color: var(--text-2); box-shadow: none; }
-.btn-sm { padding: 5px 10px; font-size: 11.5px; border-radius: 6px; }
-.btn-icon { padding: 5px 8px; font-size: 11.5px; border-radius: 6px; }
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff; border: none;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.25);
+}
+.btn-dark {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #ffffff; border: none;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.2);
+}
+.btn-emerald {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff; border: none;
+  box-shadow: 0 3px 10px rgba(5, 150, 105, 0.25);
+}
+.btn-ghost { background: transparent; border-color: transparent; color: var(--muted); box-shadow: none; }
+.btn-sm { padding: 5px 10px; font-size: 11.5px; border-radius: 7px; }
+.btn-icon { padding: 6px; border-radius: 7px; }
 
-/* Panels & Cards */
-.panel {
+/* Cards */
+.card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 18px 20px;
-  margin-bottom: 16px;
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-md);
 }
-.panel-head {
+.card-head {
   display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
-.panel-title { font-size: 14px; font-weight: 700; color: var(--text); }
-.panel-sub { font-size: 12px; color: var(--muted); }
+.card-title { font-size: 14.5px; font-weight: 700; color: var(--text); letter-spacing: -0.2px; }
+.card-sub { font-size: 12px; color: var(--muted); margin-top: 1px; }
 
-/* Stats Strip (Unified, clean instead of 4 boxy cards) */
-.stats-strip {
-  display: grid; grid-template-columns: repeat(4, 1fr);
+/* KPI Grid */
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
+.kpi-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  margin-bottom: 16px;
-  overflow: hidden;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow-sm);
+  display: flex; justify-content: space-between; align-items: flex-start;
 }
-.stat-cell {
-  padding: 16px 20px;
-  border-right: 1px solid var(--border);
+.kpi-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
 }
-.stat-cell:last-child { border-right: none; }
-.stat-label { font-size: 11.5px; color: var(--muted); font-weight: 500; }
-.stat-val { font-size: 22px; font-weight: 700; color: var(--text); margin: 3px 0; letter-spacing: -0.4px; }
-.stat-foot { font-size: 11.5px; color: var(--text-2); }
+.kpi-label { font-size: 11.5px; color: var(--muted); font-weight: 600; }
+.kpi-val { font-size: 24px; font-weight: 700; color: var(--text); margin: 3px 0; letter-spacing: -0.5px; }
+.kpi-foot { font-size: 11.5px; color: var(--text-2); }
 
 /* Tables */
 table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th, td { padding: 11px 12px; text-align: left; border-bottom: 1px solid var(--border); }
 th {
   font-size: 11px; font-weight: 600; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.4px;
-  background: #fafafa;
-  border-top: 1px solid var(--border);
+  text-transform: uppercase; letter-spacing: 0.5px;
+  background: #f8fafc;
 }
 tr:last-child td { border-bottom: none; }
 .tc { text-align: center; }
 .tr { text-align: right; }
 
-/* Pills & Tags */
+/* Pills & Badges */
 .pill {
   display: inline-flex; align-items: center; gap: 4px;
-  padding: 2px 8px; font-size: 11px; font-weight: 600;
-  border-radius: 6px; background: #f3f4f6; color: #374151;
+  padding: 3px 9px; font-size: 11px; font-weight: 600;
+  border-radius: 99px; background: #f1f5f9; color: #334155;
 }
-.pill-blue { background: var(--accent-soft); color: var(--accent); }
+.pill-blue { background: var(--primary-soft); color: var(--primary); }
 .pill-green { background: var(--emerald-soft); color: var(--emerald); }
 .pill-amber { background: var(--amber-soft); color: var(--amber); }
 .pill-rose { background: var(--rose-soft); color: var(--rose); }
 
-/* Form controls */
+/* Inputs */
 .input, .select {
-  width: 100%; padding: 8px 11px;
-  border: 1px solid var(--border-strong); border-radius: 7px;
+  width: 100%; padding: 9px 12px;
+  border: 1px solid var(--border-med); border-radius: 9px;
   background: #ffffff; font-size: 12.5px; color: var(--text);
 }
-.label { display: block; font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 5px; }
+.label { display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 5px; }
 
 /* Segmented 1-5 score selector */
 .seg-group {
-  display: inline-flex; border: 1px solid var(--border-strong); border-radius: 6px; overflow: hidden; background: #ffffff;
+  display: inline-flex; background: #f1f5f9; padding: 3px; border-radius: 8px; gap: 2px;
 }
 .seg-btn {
   padding: 4px 8px; font-size: 11.5px; font-weight: 600; color: var(--muted);
-  border-right: 1px solid var(--border); min-width: 24px; text-align: center;
+  border-radius: 6px; min-width: 25px; text-align: center;
 }
-.seg-btn:last-child { border-right: none; }
-.seg-btn.on { background: #111827; color: #ffffff; }
-.seg-btn.on-blue { background: var(--accent); color: #ffffff; }
+.seg-btn.on { background: #0f172a; color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+.seg-btn.on-blue { background: var(--primary); color: #ffffff; box-shadow: 0 1px 3px rgba(37,99,235,0.3); }
 
 /* Progress bar */
-.bar-bg { width: 100%; height: 7px; background: #e5e7eb; border-radius: 99px; overflow: hidden; }
-.bar-fill { height: 100%; background: var(--accent); border-radius: 99px; }
-.bar-fill-green { background: var(--emerald); }
+.bar-bg { width: 100%; height: 8px; background: #f1f5f9; border-radius: 99px; overflow: hidden; }
+.bar-fill { height: 100%; background: linear-gradient(90deg, #3b82f6, #2563eb); border-radius: 99px; }
+.bar-fill-green { background: linear-gradient(90deg, #10b981, #059669); }
 
 /* Filter chips */
-.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
 .chip {
-  padding: 5px 11px; border-radius: 99px; font-size: 12px; font-weight: 500;
-  border: 1px solid var(--border-strong); background: #ffffff; color: var(--text-2);
+  padding: 6px 13px; border-radius: 99px; font-size: 12px; font-weight: 600;
+  border: 1px solid var(--border); background: #ffffff; color: var(--text-2);
+  box-shadow: var(--shadow-sm);
 }
-.chip.active { background: #111827; color: #ffffff; border-color: #111827; }
+.chip.active { background: #0f172a; color: #ffffff; border-color: #0f172a; }
 
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.grid-split { display: grid; grid-template-columns: 1.55fr 1fr; gap: 16px; align-items: start; }
-.tabs { display: flex; gap: 16px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
-.tab { padding: 8px 2px; font-size: 12.5px; font-weight: 600; color: var(--muted); border-bottom: 2px solid transparent; }
-.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px; }
+.grid-split { display: grid; grid-template-columns: 1.5fr 1fr; gap: 18px; align-items: start; }
+.fish-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.fish-tile {
+  border: 1px solid var(--border); border-radius: 10px; padding: 11px 13px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: #fafafa;
+}
+.tabs { display: inline-flex; gap: 4px; background: #f1f5f9; padding: 4px; border-radius: 10px; margin-bottom: 14px; }
+.tab { padding: 6px 13px; font-size: 12px; font-weight: 600; color: var(--muted); border-radius: 7px; }
+.tab.active { background: #ffffff; color: var(--text); box-shadow: var(--shadow-sm); }
 </style>
 </head>
 <body>
@@ -230,12 +260,12 @@ tr:last-child td { border-bottom: none; }
           <div class="brand-tag">SPK Supplier TOPSIS</div>
         </div>
       </div>
-      <div class="nav-sec">Menu</div>
-      <a class="nav-link active" href="02_dashboard.html"><span class="nav-left"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Dashboard</span></span></a>
-<a class="nav-link" href="03_data_supplier.html"><span class="nav-left"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg><span>Data Supplier</span></span><span class="nav-count">25</span></a>
-<a class="nav-link" href="04_kriteria_bobot.html"><span class="nav-left"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Kriteria & Bobot</span></span><span class="nav-count">5</span></a>
-<a class="nav-link" href="05_penilaian_topsis.html"><span class="nav-left"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Penilaian TOPSIS</span></span></a>
-<a class="nav-link" href="06_hasil_laporan.html"><span class="nav-left"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg><span>Hasil & Laporan</span></span></a>
+      <div class="nav-sec">Navigasi</div>
+      <a class="nav-link active" href="02_dashboard.html"><span class="nav-left"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Dashboard</span></span></a>
+<a class="nav-link" href="03_data_supplier.html"><span class="nav-left"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg><span>Data Supplier</span></span><span class="nav-count">25</span></a>
+<a class="nav-link" href="04_kriteria_bobot.html"><span class="nav-left"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Kriteria & Bobot</span></span><span class="nav-count">5</span></a>
+<a class="nav-link" href="05_penilaian_topsis.html"><span class="nav-left"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Penilaian TOPSIS</span></span></a>
+<a class="nav-link" href="06_hasil_laporan.html"><span class="nav-left"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg><span>Hasil & Laporan</span></span></a>
 
     </div>
     <div class="user-footer">
@@ -243,7 +273,7 @@ tr:last-child td { border-bottom: none; }
         <div class="avatar">PM</div>
         <div>
           <div style="font-weight:600; font-size:12.5px;">Pemilik</div>
-          <div style="font-size:11px; color:#6b7280;">admin@rumahcue.id</div>
+          <div style="font-size:11px; color:#64748b;">admin@rumahcue.id</div>
         </div>
       </div>
       <a href="01_login.html" class="btn btn-ghost btn-icon" title="Keluar"><svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg></a>
@@ -255,121 +285,184 @@ tr:last-child td { border-bottom: none; }
         <div class="crumb">Ringkasan Sistem</div>
         <h1 class="h1">Dashboard</h1>
       </div>
-      <div class="actions"><a href="05_penilaian_topsis.html" class="btn btn-primary"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Penilaian Baru</a></div>
+      <div class="actions"><a href="05_penilaian_topsis.html" class="btn btn-primary"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Penilaian Baru</a></div>
     </div>
     
-<div class="stats-strip">
-  <div class="stat-cell"><div class="stat-label">Supplier Terdaftar</div><div class="stat-val">25</div><div class="stat-foot">Kawasan Muara Baru</div></div>
-  <div class="stat-cell"><div class="stat-label">Jenis Ikan Baku</div><div class="stat-val">8</div><div class="stat-foot">Cakalang s.d. Cucut</div></div>
-  <div class="stat-cell"><div class="stat-label">Kriteria TOPSIS</div><div class="stat-val">5</div><div class="stat-foot">4 Benefit &bull; 1 Cost</div></div>
-  <div class="stat-cell"><div class="stat-label">Evaluasi Terakhir</div><div class="stat-val" style="font-size:17px; margin:6px 0;">Ikan Salem</div><div class="stat-foot">Nov 2026 &bull; Rank #1: CV Mitra Pindang</div></div>
-</div>
-
-<div class="panel" style="padding:14px 20px;">
-  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-    <span style="font-size:12.5px; font-weight:600;">Proporsi Bobot Kriteria Aktif (Total = 1.00)</span>
-    <a href="04_kriteria_bobot.html" style="font-size:12px; color:var(--accent); text-decoration:none; font-weight:600;">Atur Bobot &rarr;</a>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div><div class="kpi-label">Total Supplier</div><div class="kpi-val">25</div><div class="kpi-foot">Gudang Muara Baru</div></div>
+    <div class="kpi-icon" style="background:var(--primary-soft); color:var(--primary);"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
   </div>
-  <div style="display:flex; height:10px; border-radius:99px; overflow:hidden; gap:2px;">
-    <div style="width:25%; background:#1d4ed8;" title="C1 Kualitas 25%"></div>
-    <div style="width:20%; background:#d97706;" title="C2 Harga 20%"></div>
-    <div style="width:20%; background:#059669;" title="C3 Waktu 20%"></div>
-    <div style="width:20%; background:#0284c7;" title="C4 Stok 20%"></div>
-    <div style="width:15%; background:#6b7280;" title="C5 Respon 15%"></div>
+  <div class="kpi-card">
+    <div><div class="kpi-label">Jenis Ikan Baku</div><div class="kpi-val">8</div><div class="kpi-foot">Cakalang s.d. Cucut</div></div>
+    <div class="kpi-icon" style="background:var(--emerald-soft); color:var(--emerald);"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6.5 12c2.5-4 7.5-5 12.5-2.5C14 12 9 11 6.5 12z"/><path d="M2 12s3-5 9-5c4.5 0 8 2.5 11 5-3 2.5-6.5 5-11 5-6 0-9-5-9-5z"/><circle cx="16.5" cy="11.5" r="1" fill="currentColor"/></svg></div>
   </div>
-  <div style="display:flex; gap:16px; margin-top:8px; font-size:11.5px; color:var(--text-2);">
-    <span>&#9632; C1 Kualitas (25%)</span>
-    <span style="color:var(--amber);">&#9632; C2 Harga Cost (20%)</span>
-    <span style="color:var(--emerald);">&#9632; C3 Waktu (20%)</span>
-    <span style="color:#0284c7;">&#9632; C4 Stok (20%)</span>
-    <span>&#9632; C5 Respon (15%)</span>
+  <div class="kpi-card">
+    <div><div class="kpi-label">Kriteria TOPSIS</div><div class="kpi-val">5</div><div class="kpi-foot">4 Benefit &bull; 1 Cost</div></div>
+    <div class="kpi-icon" style="background:var(--amber-soft); color:var(--amber);"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+  </div>
+  <div class="kpi-card">
+    <div><div class="kpi-label">Evaluasi Terakhir</div><div class="kpi-val" style="font-size:18px; margin:6px 0;">Ikan Salem</div><div class="kpi-foot">Nov 2026 &bull; 17 Supplier</div></div>
+    <div class="kpi-icon" style="background:#f1f5f9; color:#334155;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
   </div>
 </div>
 
-<div class="grid-2">
-  <div class="panel">
-    <div class="panel-head">
-      <div><div class="panel-title">Peringkat Teratas — Ikan Salem</div><div class="panel-sub">Periode November 2026 (17 supplier)</div></div>
-      <a href="06_hasil_laporan.html" class="btn btn-sm">Detail Lengkap</a>
+<div class="grid-split">
+  <div class="card">
+    <div class="card-head">
+      <div><div class="card-title">Top 5 Supplier Terbaik — Ikan Salem</div><div class="card-sub">Periode November 2026 (17 supplier tersaring)</div></div>
+      <a href="06_hasil_laporan.html" class="btn btn-sm">Lihat Semua</a>
     </div>
     
-    <div style="margin-bottom:12px;">
-      <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
-        <span><strong>#1 CV Mitra Pindang Sejahtera</strong> <span class="pill" style="margin-left:4px;">S19</span></span>
+    <div style="margin-bottom:14px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; font-size:12.5px; margin-bottom:5px;">
+        <span style="display:flex; align-items:center; gap:8px;">
+          <span style="width:22px; height:22px; border-radius:6px; background:#ecfdf5; color:#059669; display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:11px;">1</span>
+          <strong>CV Mitra Pindang Sejahtera</strong>
+          <span class="pill">S19</span>
+        </span>
         <strong>0.8078</strong>
       </div>
       <div class="bar-bg"><div class="bar-fill bar-fill-green" style="width:80%;"></div></div>
     </div>
-    <div style="margin-bottom:12px;">
-      <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
-        <span><strong>#2 UD Mina Muara Jaya</strong> <span class="pill" style="margin-left:4px;">S01</span></span>
+    <div style="margin-bottom:14px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; font-size:12.5px; margin-bottom:5px;">
+        <span style="display:flex; align-items:center; gap:8px;">
+          <span style="width:22px; height:22px; border-radius:6px; background:#f1f5f9; color:#334155; display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:11px;">2</span>
+          <strong>UD Mina Muara Jaya</strong>
+          <span class="pill">S01</span>
+        </span>
         <strong>0.7830</strong>
       </div>
       <div class="bar-bg"><div class="bar-fill" style="width:78%;"></div></div>
     </div>
-    <div style="margin-bottom:12px;">
-      <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
-        <span><strong>#3 PT Pasifik Beku Mandiri</strong> <span class="pill" style="margin-left:4px;">S21</span></span>
+    <div style="margin-bottom:14px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; font-size:12.5px; margin-bottom:5px;">
+        <span style="display:flex; align-items:center; gap:8px;">
+          <span style="width:22px; height:22px; border-radius:6px; background:#f1f5f9; color:#334155; display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:11px;">3</span>
+          <strong>PT Pasifik Beku Mandiri</strong>
+          <span class="pill">S21</span>
+        </span>
         <strong>0.7716</strong>
       </div>
       <div class="bar-bg"><div class="bar-fill" style="width:77%;"></div></div>
     </div>
-    <div style="margin-bottom:12px;">
-      <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
-        <span><strong>#4 CV Sumber Rezeki Laut</strong> <span class="pill" style="margin-left:4px;">S11</span></span>
+    <div style="margin-bottom:14px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; font-size:12.5px; margin-bottom:5px;">
+        <span style="display:flex; align-items:center; gap:8px;">
+          <span style="width:22px; height:22px; border-radius:6px; background:#f1f5f9; color:#334155; display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:11px;">4</span>
+          <strong>CV Sumber Rezeki Laut</strong>
+          <span class="pill">S11</span>
+        </span>
         <strong>0.7641</strong>
       </div>
       <div class="bar-bg"><div class="bar-fill" style="width:76%;"></div></div>
     </div>
-    <div style="margin-bottom:12px;">
-      <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;">
-        <span><strong>#5 CV Bahari Segar Abadi</strong> <span class="pill" style="margin-left:4px;">S03</span></span>
+    <div style="margin-bottom:14px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; font-size:12.5px; margin-bottom:5px;">
+        <span style="display:flex; align-items:center; gap:8px;">
+          <span style="width:22px; height:22px; border-radius:6px; background:#f1f5f9; color:#334155; display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:11px;">5</span>
+          <strong>CV Bahari Segar Abadi</strong>
+          <span class="pill">S03</span>
+        </span>
         <strong>0.7248</strong>
       </div>
       <div class="bar-bg"><div class="bar-fill" style="width:72%;"></div></div>
     </div>
   </div>
-  <div class="panel">
-    <div class="panel-head">
-      <div><div class="panel-title">Pilih Jenis Ikan untuk Dinilai</div><div class="panel-sub">Otomatis menyaring gudang yang menyediakan ikan terkait</div></div>
-      <a href="03_data_supplier.html" class="btn btn-sm">Atur Gudang</a>
+
+  <div class="card">
+    <div class="card-head">
+      <div><div class="card-title">Bobot Kriteria Aktif</div><div class="card-sub">Skala Likert 1–5 pemilik</div></div>
+      <a href="04_kriteria_bobot.html" class="btn btn-sm">Atur</a>
     </div>
-    <table>
-      <thead><tr><th>Jenis Ikan</th><th class="tc">Ketersediaan</th><th class="tr">Aksi</th></tr></thead>
-      <tbody><tr>
-      <td><strong>Cakalang</strong> <span style="color:#9ca3af; font-size:11px;">(IK01)</span></td>
-      <td class="tc">15 gudang</td>
-      <td class="tr"><a href="05_penilaian_topsis.html" class="btn btn-sm">Mulai Nilai</a></td>
-    </tr><tr>
-      <td><strong>Maesang</strong> <span style="color:#9ca3af; font-size:11px;">(IK02)</span></td>
-      <td class="tc">9 gudang</td>
-      <td class="tr"><a href="05_penilaian_topsis.html" class="btn btn-sm">Mulai Nilai</a></td>
-    </tr><tr>
-      <td><strong>Layang</strong> <span style="color:#9ca3af; font-size:11px;">(IK03)</span></td>
-      <td class="tc">15 gudang</td>
-      <td class="tr"><a href="05_penilaian_topsis.html" class="btn btn-sm">Mulai Nilai</a></td>
-    </tr><tr>
-      <td><strong>Bandeng</strong> <span style="color:#9ca3af; font-size:11px;">(IK04)</span></td>
-      <td class="tc">12 gudang</td>
-      <td class="tr"><a href="05_penilaian_topsis.html" class="btn btn-sm">Mulai Nilai</a></td>
-    </tr><tr>
-      <td><strong>Salem</strong> <span style="color:#9ca3af; font-size:11px;">(IK05)</span></td>
-      <td class="tc">17 gudang</td>
-      <td class="tr"><a href="05_penilaian_topsis.html" class="btn btn-sm">Mulai Nilai</a></td>
-    </tr><tr>
-      <td><strong>Kembung Banjar</strong> <span style="color:#9ca3af; font-size:11px;">(IK06)</span></td>
-      <td class="tc">16 gudang</td>
-      <td class="tr"><a href="05_penilaian_topsis.html" class="btn btn-sm">Mulai Nilai</a></td>
-    </tr><tr>
-      <td><strong>Deho</strong> <span style="color:#9ca3af; font-size:11px;">(IK07)</span></td>
-      <td class="tc">13 gudang</td>
-      <td class="tr"><a href="05_penilaian_topsis.html" class="btn btn-sm">Mulai Nilai</a></td>
-    </tr><tr>
-      <td><strong>Cucut</strong> <span style="color:#9ca3af; font-size:11px;">(IK08)</span></td>
-      <td class="tc">11 gudang</td>
-      <td class="tr"><a href="05_penilaian_topsis.html" class="btn btn-sm">Mulai Nilai</a></td>
-    </tr></tbody>
-    </table>
+    <div style="display:flex; align-items:center; gap:20px;">
+      
+<svg width="116" height="116" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#f1f5f9" stroke-width="12"/>
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#2563eb" stroke-width="12" stroke-dasharray="59.7 238.76" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#d97706" stroke-width="12" stroke-dasharray="47.75 238.76" stroke-dashoffset="-59.7" transform="rotate(-90 50 50)"/>
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#059669" stroke-width="12" stroke-dasharray="47.75 238.76" stroke-dashoffset="-107.45" transform="rotate(-90 50 50)"/>
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#0284c7" stroke-width="12" stroke-dasharray="47.75 238.76" stroke-dashoffset="-155.2" transform="rotate(-90 50 50)"/>
+  <circle cx="50" cy="50" r="38" fill="none" stroke="#64748b" stroke-width="12" stroke-dasharray="35.81 238.76" stroke-dashoffset="-202.95" transform="rotate(-90 50 50)"/>
+  <text x="50" y="48" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">1.00</text>
+  <text x="50" y="60" text-anchor="middle" font-size="7.5" fill="#64748b">BOBOT</text>
+</svg>
+
+      <div style="flex:1; font-size:12px; display:flex; flex-direction:column; gap:6px;">
+        <div style="display:flex; justify-content:space-between;"><span><span style="color:#2563eb;">&#9679;</span> C1 Kualitas</span><strong>25%</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span><span style="color:#d97706;">&#9679;</span> C2 Harga (Cost)</span><strong>20%</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span><span style="color:#059669;">&#9679;</span> C3 Waktu</span><strong>20%</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span><span style="color:#0284c7;">&#9679;</span> C4 Stok</span><strong>20%</strong></div>
+        <div style="display:flex; justify-content:space-between;"><span><span style="color:#64748b;">&#9679;</span> C5 Respon</span><strong>15%</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head">
+    <div><div class="card-title">Mulai Penilaian per Jenis Ikan</div><div class="card-sub">Pilih jenis ikan untuk menyaring gudang penyedia secara otomatis</div></div>
+    <a href="03_data_supplier.html" class="btn btn-sm">Kelola Gudang</a>
+  </div>
+  <div class="fish-grid" style="grid-template-columns:repeat(4, 1fr);">
+    
+    <div class="fish-tile">
+      <div>
+        <div style="font-weight:700; font-size:13px;">Cakalang</div>
+        <div style="font-size:11.5px; color:var(--muted);">15 gudang tersedia</div>
+      </div>
+      <a href="05_penilaian_topsis.html" class="btn btn-sm">Nilai &rarr;</a>
+    </div>
+    <div class="fish-tile">
+      <div>
+        <div style="font-weight:700; font-size:13px;">Maesang</div>
+        <div style="font-size:11.5px; color:var(--muted);">9 gudang tersedia</div>
+      </div>
+      <a href="05_penilaian_topsis.html" class="btn btn-sm">Nilai &rarr;</a>
+    </div>
+    <div class="fish-tile">
+      <div>
+        <div style="font-weight:700; font-size:13px;">Layang</div>
+        <div style="font-size:11.5px; color:var(--muted);">15 gudang tersedia</div>
+      </div>
+      <a href="05_penilaian_topsis.html" class="btn btn-sm">Nilai &rarr;</a>
+    </div>
+    <div class="fish-tile">
+      <div>
+        <div style="font-weight:700; font-size:13px;">Bandeng</div>
+        <div style="font-size:11.5px; color:var(--muted);">12 gudang tersedia</div>
+      </div>
+      <a href="05_penilaian_topsis.html" class="btn btn-sm">Nilai &rarr;</a>
+    </div>
+    <div class="fish-tile">
+      <div>
+        <div style="font-weight:700; font-size:13px;">Salem</div>
+        <div style="font-size:11.5px; color:var(--muted);">17 gudang tersedia</div>
+      </div>
+      <a href="05_penilaian_topsis.html" class="btn btn-sm">Nilai &rarr;</a>
+    </div>
+    <div class="fish-tile">
+      <div>
+        <div style="font-weight:700; font-size:13px;">Kembung Banjar</div>
+        <div style="font-size:11.5px; color:var(--muted);">16 gudang tersedia</div>
+      </div>
+      <a href="05_penilaian_topsis.html" class="btn btn-sm">Nilai &rarr;</a>
+    </div>
+    <div class="fish-tile">
+      <div>
+        <div style="font-weight:700; font-size:13px;">Deho</div>
+        <div style="font-size:11.5px; color:var(--muted);">13 gudang tersedia</div>
+      </div>
+      <a href="05_penilaian_topsis.html" class="btn btn-sm">Nilai &rarr;</a>
+    </div>
+    <div class="fish-tile">
+      <div>
+        <div style="font-weight:700; font-size:13px;">Cucut</div>
+        <div style="font-size:11.5px; color:var(--muted);">11 gudang tersedia</div>
+      </div>
+      <a href="05_penilaian_topsis.html" class="btn btn-sm">Nilai &rarr;</a>
+    </div>
   </div>
 </div>
 
