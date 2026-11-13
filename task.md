@@ -6,15 +6,15 @@
 ---
 
 ## Status Saat Ini
-- **Phase Aktif:** `Phase 0 — Setup Workspace & Pematangan BAB I – BAB II`
-- **Status Approval:** Menunggu diskusi & approval Phase 0 dari user.
+- **Phase Aktif:** `Phase 1 — Data Riil, Wireframe (HTML & IMG), Pemodelan (UML/ERD), & BAB III`
+- **Status Approval:** Phase 0 telah **Approved**; siap memulai Phase 1 di New Conversation.
 - **Status Git/GitHub:** Terhubung ke `https://github.com/MaulanaSetyaPrawira/Pemilihan_supplier.git` (branch `main` sudah di-push).
 
 ---
 
 ## Roadmap & Checklist Pengerjaan
 
-### Phase 0: Setup Workspace, GitHub, & Pematangan BAB I – BAB II *(Conversation 1 — Aktif)*
+### Phase 0: Setup Workspace, GitHub, & Pematangan BAB I – BAB II *(Selesai — Approved)*
 - [x] Inisialisasi struktur folder rapi (`docs/`, `wireframes/html/`, `wireframes/img/`, `diagrams/`, `app/`)
 - [x] Buat `.gitignore` (meng-ignore `Folder Ori/`) dan inisialisasi Git lokal
 - [x] Update `GEMINI.md` dan buat `task.md` sebagai memori lintas-conversation
@@ -22,7 +22,7 @@
 - [x] Diskusi & konfirmasi poin kritis BAB I & BAB II (skala kriteria/sub-kriteria, mekanisme penilaian 8 jenis ikan vs harga C2, daftar supplier Muara Baru)
 - [x] Audit & revisi BAB I pada `Skripsi_Maulana_BAB_I_II_Revisi (1).docx`
 - [x] Audit & revisi BAB II pada `Skripsi_Maulana_BAB_I_II_Revisi (1).docx`
-- [ ] **Approval User untuk Phase 0** → Commit → *Ganti ke New Conversation untuk Phase 1*
+- [x] **Approval User untuk Phase 0** → Commit → *Ganti ke New Conversation untuk Phase 1*
 
 ### Phase 1: Data Riil, Wireframe (HTML & IMG), Pemodelan (UML/ERD), & BAB III *(New Conversation)*
 - [ ] Kumpulkan/verifikasi data riil supplier Muara Baru, skor bobot 1–5 pemilik, dan hitung manual TOPSIS 5 kriteria di `docs/`
