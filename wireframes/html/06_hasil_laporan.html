@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Wireframe 06 — Hasil Peringkat & Riwayat Perhitungan TOPSIS</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.wf-banner {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 6px 20px;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #334155;
+}
+.wf-banner strong { color: #38bdf8; letter-spacing: 0.5px; }
+.layout { display: flex; min-height: calc(100vh - 30px); }
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-right: 2px solid #cbd5e1;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.brand {
+  border: 2px dashed #64748b;
+  background: #f8fafc;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+.brand-title { font-weight: 700; font-size: 14px; color: #0f172a; }
+.brand-sub { font-size: 11px; color: #475569; margin-top: 2px; }
+.nav-group-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 12px 8px 6px;
+  letter-spacing: 0.6px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #334155;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-item.active {
+  background: #e2e8f0;
+  border: 1.5px solid #0f172a;
+  color: #0f172a;
+  font-weight: 700;
+}
+.nav-badge {
+  font-size: 10px;
+  background: #cbd5e1;
+  color: #0f172a;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+.user-box {
+  border-top: 1px solid #cbd5e1;
+  padding-top: 12px;
+  font-size: 12px;
+}
+.main { flex: 1; padding: 20px 24px; }
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.breadcrumb { font-size: 11px; color: #64748b; margin-bottom: 2px; }
+.page-title { font-size: 18px; font-weight: 700; color: #0f172a; }
+.btn {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1.5px solid #334155;
+  background: #ffffff;
+  color: #0f172a;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+.btn-sm { padding: 4px 9px; font-size: 11px; }
+.card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+.card-title { font-size: 14px; font-weight: 700; color: #0f172a; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.kpi-box {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-left: 4px solid #0f172a;
+  padding: 12px 14px;
+  border-radius: 4px;
+}
+.kpi-label { font-size: 11px; color: #64748b; text-transform: uppercase; font-weight: 600; }
+.kpi-val { font-size: 22px; font-weight: 700; color: #0f172a; margin: 4px 0; }
+.kpi-sub { font-size: 11px; color: #475569; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th, td { border: 1px solid #cbd5e1; padding: 7px 9px; text-align: left; }
+th { background: #f8fafc; font-weight: 700; color: #0f172a; }
+tr:nth-child(even) td { background: #fcfcfd; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.tag {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 10px;
+  border: 1px solid #94a3b8;
+  background: #f1f5f9;
+  border-radius: 3px;
+  margin: 1px 2px 1px 0;
+  font-weight: 600;
+}
+.tag-dark { background: #0f172a; color: #ffffff; border-color: #0f172a; }
+.form-control {
+  width: 100%;
+  padding: 6px 9px;
+  border: 1.5px solid #94a3b8;
+  border-radius: 4px;
+  background: #ffffff;
+  font-size: 12px;
+}
+.form-label { display: block; font-size: 11px; font-weight: 700; margin-bottom: 4px; color: #334155; }
+.wire-note {
+  background: #fffbeb;
+  border: 1px dashed #b45309;
+  color: #78350f;
+  padding: 8px 12px;
+  font-size: 11px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.stepper { display: flex; gap: 8px; margin-bottom: 16px; }
+.step-box {
+  flex: 1;
+  border: 1.5px solid #cbd5e1;
+  background: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+.step-box.active { border-color: #0f172a; background: #e2e8f0; }
+.step-num { font-size: 10px; font-weight: 700; color: #475569; text-transform: uppercase; }
+.step-name { font-size: 13px; font-weight: 700; color: #0f172a; margin-top: 2px; }
+.tabs { display: flex; border-bottom: 2px solid #cbd5e1; margin-bottom: 12px; gap: 4px; }
+.tab { padding: 7px 14px; border: 1.5px solid #cbd5e1; border-bottom: none; background: #f8fafc; font-weight: 600; font-size: 12px; border-radius: 4px 4px 0 0; }
+.tab.active { background: #0f172a; color: #ffffff; border-color: #0f172a; }
+</style>
+</head>
+<body>
+<div class="wf-banner">
+  <span><strong>WIREFRAME 06</strong> | SPK Pemilihan Supplier Ikan Pindang (TOPSIS) — Rumah Cue Pasar Kebayoran Lama</span>
+  <span>Resolusi Desain: Desktop 1440px | Flow: Laravel + Bootstrap 5</span>
+</div>
+<div class="layout">
+  <aside class="sidebar">
+    <div>
+      <div class="brand">
+        <div class="brand-title">SPK RUMAH CUE</div>
+        <div class="brand-sub">Metode TOPSIS • Muara Baru</div>
+      </div>
+      <div class="nav-group-label">Menu Utama</div>
+      <a class="nav-item" href="02_dashboard.html"><span>Dashboard</span></a>
+<a class="nav-item" href="03_data_supplier.html"><span>Data Supplier</span><span class="nav-badge">25</span></a>
+<a class="nav-item" href="04_kriteria_bobot.html"><span>Kriteria & Bobot</span><span class="nav-badge">5</span></a>
+<a class="nav-item" href="05_penilaian_topsis.html"><span>Penilaian & Hitung TOPSIS</span></a>
+<a class="nav-item active" href="06_hasil_laporan.html"><span>Hasil & Laporan PDF</span></a>
+
+      <div class="nav-group-label">Akun</div>
+      <a class="nav-item" href="01_login.html"><span>Keluar (Logout)</span></a>
+    </div>
+    <div class="user-box">
+      <div style="font-weight:700;">Pemilik / Admin</div>
+      <div style="color:#64748b; font-size:11px;">admin@rumahcue.id</div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <div class="breadcrumb">Home / Hasil & Laporan PDF</div>
+        <div class="page-title">Hasil Peringkat & Riwayat Perhitungan TOPSIS</div>
+      </div>
+      <div><a href="07_cetak_laporan_pdf.html" class="btn btn-primary">Pratinjau Cetak PDF</a></div>
+    </div>
+    
+<div class="card" style="background:#f8fafc; border:2px solid #0f172a;">
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div>
+      <div class="tag tag-dark" style="margin-bottom:4px;">REKOMENDASI TERBAIK &bull; PERIODE NOVEMBER 2026 &bull; IKAN SALEM</div>
+      <h2 style="font-size:18px;">Peringkat #1: S19 — CV Mitra Pindang Sejahtera</h2>
+      <div style="color:#475569; font-size:12px;">Nilai Preferensi Akhir (V<sub>1</sub>) = <strong>0.8078</strong> &bull; D<sup>+</sup> = 0.0252 &bull; D<sup>&minus;</sup> = 0.1059</div>
+    </div>
+    <div>
+      <a href="07_cetak_laporan_pdf.html" class="btn btn-primary">Cetak Laporan PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">Filter Riwayat Hasil Perhitungan</div>
+    <div style="display:flex; gap:8px;">
+      <select class="form-control" style="width:160px;"><option>November 2026</option></select>
+      <select class="form-control" style="width:180px;"><option>IK05 — Ikan Salem</option><option>IK01 — Cakalang</option></select>
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th class="text-center" style="width:65px;">Rank</th>
+        <th class="text-center" style="width:65px;">Kode</th>
+        <th>Nama Supplier</th>
+        <th class="text-center">Jarak Ideal Positif (D<sub>i</sub><sup>+</sup>)</th>
+        <th class="text-center">Jarak Ideal Negatif (D<sub>i</sub><sup>&minus;</sup>)</th>
+        <th class="text-center">Nilai Preferensi (V<sub>i</sub>)</th>
+        <th class="text-center">Keterangan</th>
+      </tr>
+    </thead>
+    <tbody><tr>
+      <td class="text-center"><strong>#1</strong></td>
+      <td class="text-center">S19</td>
+      <td><strong>CV Mitra Pindang Sejahtera</strong></td>
+      <td class="text-center">0.0208</td>
+      <td class="text-center">0.0875</td>
+      <td class="text-center"><strong>0.8078</strong></td>
+      <td class="text-center"><span class="tag tag-dark">Terbaik / Direkomendasikan</span></td>
+    </tr><tr>
+      <td class="text-center"><strong>#2</strong></td>
+      <td class="text-center">S01</td>
+      <td><strong>UD Mina Muara Jaya</strong></td>
+      <td class="text-center">0.0226</td>
+      <td class="text-center">0.0816</td>
+      <td class="text-center"><strong>0.7830</strong></td>
+      <td class="text-center"><span class="tag ">Alternatif</span></td>
+    </tr><tr>
+      <td class="text-center"><strong>#3</strong></td>
+      <td class="text-center">S21</td>
+      <td><strong>PT Pasifik Beku Mandiri</strong></td>
+      <td class="text-center">0.0237</td>
+      <td class="text-center">0.0801</td>
+      <td class="text-center"><strong>0.7716</strong></td>
+      <td class="text-center"><span class="tag ">Alternatif</span></td>
+    </tr><tr>
+      <td class="text-center"><strong>#4</strong></td>
+      <td class="text-center">S11</td>
+      <td><strong>CV Sumber Rezeki Laut</strong></td>
+      <td class="text-center">0.0244</td>
+      <td class="text-center">0.0790</td>
+      <td class="text-center"><strong>0.7641</strong></td>
+      <td class="text-center"><span class="tag ">Alternatif</span></td>
+    </tr><tr>
+      <td class="text-center"><strong>#5</strong></td>
+      <td class="text-center">S03</td>
+      <td><strong>CV Bahari Segar Abadi</strong></td>
+      <td class="text-center">0.0278</td>
+      <td class="text-center">0.0732</td>
+      <td class="text-center"><strong>0.7248</strong></td>
+      <td class="text-center"><span class="tag ">Alternatif</span></td>
+    </tr><tr>
+      <td class="text-center"><strong>#6</strong></td>
+      <td class="text-center">S06</td>
+      <td><strong>UD Cahaya Ikan Sejahtera</strong></td>
+      <td class="text-center">0.0381</td>
+      <td class="text-center">0.0783</td>
+      <td class="text-center"><strong>0.6727</strong></td>
+      <td class="text-center"><span class="tag ">Alternatif</span></td>
+    </tr><tr>
+      <td class="text-center"><strong>#7</strong></td>
+      <td class="text-center">S02</td>
+      <td><strong>PT Samudra Beku Nusantara</strong></td>
+      <td class="text-center">0.0376</td>
+      <td class="text-center">0.0715</td>
+      <td class="text-center"><strong>0.6553</strong></td>
+      <td class="text-center"><span class="tag ">Alternatif</span></td>
+    </tr><tr>
+      <td class="text-center"><strong>#8</strong></td>
+      <td class="text-center">S09</td>
+      <td><strong>PT Maritim Indo Beku</strong></td>
+      <td class="text-center">0.0408</td>
+      <td class="text-center">0.0701</td>
+      <td class="text-center"><strong>0.6319</strong></td>
+      <td class="text-center"><span class="tag ">Alternatif</span></td>
+    </tr></tbody>
+  </table>
+  <div style="font-size:11px; color:#64748b; margin-top:8px;">Menampilkan Peringkat 1–8 dari 17 supplier Ikan Salem.</div>
+</div>
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">Transparansi Tahap Perhitungan TOPSIS (Untuk Audit &amp; White Box Testing)</div>
+  </div>
+  <div class="tabs">
+    <div class="tab">1. Matriks X</div>
+    <div class="tab">2. Normalisasi R</div>
+    <div class="tab">3. Terbobot Y</div>
+    <div class="tab active">4. Solusi Ideal A+ &amp; A-</div>
+    <div class="tab">5. Jarak D+/D- &amp; Vi</div>
+  </div>
+  <table>
+    <thead><tr><th>Solusi Ideal</th><th class="text-center">C1 (Benefit)</th><th class="text-center">C2 (Cost)</th><th class="text-center">C3 (Benefit)</th><th class="text-center">C4 (Benefit)</th><th class="text-center">C5 (Benefit)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>A<sup>+</sup> (Ideal Positif / Terbaik)</strong></td><td class="text-center">0.0725</td><td class="text-center">0.0173</td><td class="text-center">0.0584</td><td class="text-center">0.0563</td><td class="text-center">0.0464</td></tr>
+      <tr><td><strong>A<sup>&minus;</sup> (Ideal Negatif / Terburuk)</strong></td><td class="text-center">0.0290</td><td class="text-center">0.0864</td><td class="text-center">0.0234</td><td class="text-center">0.0225</td><td class="text-center">0.0186</td></tr>
+    </tbody>
+  </table>
+</div>
+
+  </main>
+</div>
+</body>
+</html>

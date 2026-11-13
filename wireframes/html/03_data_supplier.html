@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Wireframe 03 — Manajemen Data Supplier</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.wf-banner {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 6px 20px;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #334155;
+}
+.wf-banner strong { color: #38bdf8; letter-spacing: 0.5px; }
+.layout { display: flex; min-height: calc(100vh - 30px); }
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-right: 2px solid #cbd5e1;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.brand {
+  border: 2px dashed #64748b;
+  background: #f8fafc;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+.brand-title { font-weight: 700; font-size: 14px; color: #0f172a; }
+.brand-sub { font-size: 11px; color: #475569; margin-top: 2px; }
+.nav-group-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 12px 8px 6px;
+  letter-spacing: 0.6px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #334155;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-item.active {
+  background: #e2e8f0;
+  border: 1.5px solid #0f172a;
+  color: #0f172a;
+  font-weight: 700;
+}
+.nav-badge {
+  font-size: 10px;
+  background: #cbd5e1;
+  color: #0f172a;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+.user-box {
+  border-top: 1px solid #cbd5e1;
+  padding-top: 12px;
+  font-size: 12px;
+}
+.main { flex: 1; padding: 20px 24px; }
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.breadcrumb { font-size: 11px; color: #64748b; margin-bottom: 2px; }
+.page-title { font-size: 18px; font-weight: 700; color: #0f172a; }
+.btn {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1.5px solid #334155;
+  background: #ffffff;
+  color: #0f172a;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+.btn-sm { padding: 4px 9px; font-size: 11px; }
+.card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+.card-title { font-size: 14px; font-weight: 700; color: #0f172a; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.kpi-box {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-left: 4px solid #0f172a;
+  padding: 12px 14px;
+  border-radius: 4px;
+}
+.kpi-label { font-size: 11px; color: #64748b; text-transform: uppercase; font-weight: 600; }
+.kpi-val { font-size: 22px; font-weight: 700; color: #0f172a; margin: 4px 0; }
+.kpi-sub { font-size: 11px; color: #475569; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th, td { border: 1px solid #cbd5e1; padding: 7px 9px; text-align: left; }
+th { background: #f8fafc; font-weight: 700; color: #0f172a; }
+tr:nth-child(even) td { background: #fcfcfd; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.tag {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 10px;
+  border: 1px solid #94a3b8;
+  background: #f1f5f9;
+  border-radius: 3px;
+  margin: 1px 2px 1px 0;
+  font-weight: 600;
+}
+.tag-dark { background: #0f172a; color: #ffffff; border-color: #0f172a; }
+.form-control {
+  width: 100%;
+  padding: 6px 9px;
+  border: 1.5px solid #94a3b8;
+  border-radius: 4px;
+  background: #ffffff;
+  font-size: 12px;
+}
+.form-label { display: block; font-size: 11px; font-weight: 700; margin-bottom: 4px; color: #334155; }
+.wire-note {
+  background: #fffbeb;
+  border: 1px dashed #b45309;
+  color: #78350f;
+  padding: 8px 12px;
+  font-size: 11px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.stepper { display: flex; gap: 8px; margin-bottom: 16px; }
+.step-box {
+  flex: 1;
+  border: 1.5px solid #cbd5e1;
+  background: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+.step-box.active { border-color: #0f172a; background: #e2e8f0; }
+.step-num { font-size: 10px; font-weight: 700; color: #475569; text-transform: uppercase; }
+.step-name { font-size: 13px; font-weight: 700; color: #0f172a; margin-top: 2px; }
+.tabs { display: flex; border-bottom: 2px solid #cbd5e1; margin-bottom: 12px; gap: 4px; }
+.tab { padding: 7px 14px; border: 1.5px solid #cbd5e1; border-bottom: none; background: #f8fafc; font-weight: 600; font-size: 12px; border-radius: 4px 4px 0 0; }
+.tab.active { background: #0f172a; color: #ffffff; border-color: #0f172a; }
+</style>
+</head>
+<body>
+<div class="wf-banner">
+  <span><strong>WIREFRAME 03</strong> | SPK Pemilihan Supplier Ikan Pindang (TOPSIS) — Rumah Cue Pasar Kebayoran Lama</span>
+  <span>Resolusi Desain: Desktop 1440px | Flow: Laravel + Bootstrap 5</span>
+</div>
+<div class="layout">
+  <aside class="sidebar">
+    <div>
+      <div class="brand">
+        <div class="brand-title">SPK RUMAH CUE</div>
+        <div class="brand-sub">Metode TOPSIS • Muara Baru</div>
+      </div>
+      <div class="nav-group-label">Menu Utama</div>
+      <a class="nav-item" href="02_dashboard.html"><span>Dashboard</span></a>
+<a class="nav-item active" href="03_data_supplier.html"><span>Data Supplier</span><span class="nav-badge">25</span></a>
+<a class="nav-item" href="04_kriteria_bobot.html"><span>Kriteria & Bobot</span><span class="nav-badge">5</span></a>
+<a class="nav-item" href="05_penilaian_topsis.html"><span>Penilaian & Hitung TOPSIS</span></a>
+<a class="nav-item" href="06_hasil_laporan.html"><span>Hasil & Laporan PDF</span></a>
+
+      <div class="nav-group-label">Akun</div>
+      <a class="nav-item" href="01_login.html"><span>Keluar (Logout)</span></a>
+    </div>
+    <div class="user-box">
+      <div style="font-weight:700;">Pemilik / Admin</div>
+      <div style="color:#64748b; font-size:11px;">admin@rumahcue.id</div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <div class="breadcrumb">Home / Master Data / Data Supplier</div>
+        <div class="page-title">Manajemen Data Supplier</div>
+      </div>
+      <div><button class="btn btn-primary">+ Tambah Supplier</button></div>
+    </div>
+    
+<div class="wire-note">
+  <strong>Aturan Bisnis Supplier:</strong> Tidak semua gudang di Muara Baru menyediakan ke-8 jenis ikan. Saat menambah/mengubah supplier, admin <strong>wajib mencentang jenis ikan</strong> yang tersedia di gudang tersebut agar daftar alternatif otomatis tersaring saat penilaian TOPSIS per ikan.
+</div>
+<div class="card">
+  <div style="display:flex; gap:10px; align-items:end; margin-bottom:12px;">
+    <div style="flex:2;">
+      <label class="form-label">Cari Kode / Nama Supplier</label>
+      <input class="form-control" type="text" placeholder="Ketik nama gudang atau kode (mis. S01)..." readonly>
+    </div>
+    <div style="flex:1.2;">
+      <label class="form-label">Filter Ketersediaan Jenis Ikan</label>
+      <select class="form-control"><option>Semua Jenis Ikan (25 Supplier)</option><option>Salem (17 Supplier)</option><option>Cakalang</option></select>
+    </div>
+    <div><button class="btn btn-primary">+ Tambah Supplier</button></div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th class="text-center" style="width:60px;">Kode</th>
+        <th>Nama Gudang &amp; Alamat Muara Baru</th>
+        <th style="width:120px;">No. Telepon</th>
+        <th>Jenis Ikan yang Tersedia di Gudang</th>
+        <th class="text-center" style="width:120px;">Aksi</th>
+      </tr>
+    </thead>
+    <tbody><tr>
+      <td class="text-center"><strong>S01</strong></td>
+      <td><strong>UD Mina Muara Jaya</strong><br><span style="font-size:11px; color:#64748b;">Jl. Muara Baru Ujung Blok A No. 12, Jakarta Utara</span></td>
+      <td>0812-8801-1101</td>
+      <td><span class="tag">Cakalang</span><span class="tag">Layang</span><span class="tag">Salem</span><span class="tag">Kembung Banjar</span><span class="tag">Deho</span></td>
+      <td class="text-center"><button class="btn btn-sm">Edit</button> <button class="btn btn-sm">Hapus</button></td>
+    </tr><tr>
+      <td class="text-center"><strong>S02</strong></td>
+      <td><strong>PT Samudra Beku Nusantara</strong><br><span style="font-size:11px; color:#64748b;">Jl. Muara Baru Raya Blok B No. 04, Jakarta Utara</span></td>
+      <td>0813-8801-1102</td>
+      <td><span class="tag">Cakalang</span><span class="tag">Maesang</span><span class="tag">Layang</span><span class="tag">Bandeng</span><span class="tag">Salem</span><span class="tag">Kembung Banjar</span><span class="tag">Deho</span><span class="tag">Cucut</span></td>
+      <td class="text-center"><button class="btn btn-sm">Edit</button> <button class="btn btn-sm">Hapus</button></td>
+    </tr><tr>
+      <td class="text-center"><strong>S03</strong></td>
+      <td><strong>CV Bahari Segar Abadi</strong><br><span style="font-size:11px; color:#64748b;">Jl. Muara Baru Ujung Blok C No. 18, Jakarta Utara</span></td>
+      <td>0812-8801-1103</td>
+      <td><span class="tag">Layang</span><span class="tag">Salem</span><span class="tag">Kembung Banjar</span><span class="tag">Cucut</span></td>
+      <td class="text-center"><button class="btn btn-sm">Edit</button> <button class="btn btn-sm">Hapus</button></td>
+    </tr><tr>
+      <td class="text-center"><strong>S04</strong></td>
+      <td><strong>UD Bintang Laut Mandiri</strong><br><span style="font-size:11px; color:#64748b;">Jl. Tuna Raya Muara Baru No. 07, Jakarta Utara</span></td>
+      <td>0857-8801-1104</td>
+      <td><span class="tag">Cakalang</span><span class="tag">Maesang</span><span class="tag">Deho</span><span class="tag">Cucut</span></td>
+      <td class="text-center"><button class="btn btn-sm">Edit</button> <button class="btn btn-sm">Hapus</button></td>
+    </tr><tr>
+      <td class="text-center"><strong>S05</strong></td>
+      <td><strong>PT Nelayan Makmur Sentosa</strong><br><span style="font-size:11px; color:#64748b;">Jl. Cakalang Muara Baru Blok D No. 09, Jakarta Utara</span></td>
+      <td>0811-8801-1105</td>
+      <td><span class="tag">Cakalang</span><span class="tag">Layang</span><span class="tag">Bandeng</span><span class="tag">Salem</span><span class="tag">Kembung Banjar</span></td>
+      <td class="text-center"><button class="btn btn-sm">Edit</button> <button class="btn btn-sm">Hapus</button></td>
+    </tr><tr>
+      <td class="text-center"><strong>S06</strong></td>
+      <td><strong>UD Cahaya Ikan Sejahtera</strong><br><span style="font-size:11px; color:#64748b;">Jl. Muara Baru Ujung Blok E No. 21, Jakarta Utara</span></td>
+      <td>0812-8801-1106</td>
+      <td><span class="tag">Bandeng</span><span class="tag">Salem</span><span class="tag">Kembung Banjar</span></td>
+      <td class="text-center"><button class="btn btn-sm">Edit</button> <button class="btn btn-sm">Hapus</button></td>
+    </tr><tr>
+      <td class="text-center"><strong>S07</strong></td>
+      <td><strong>CV Pelabuhan Baru Coldstorage</strong><br><span style="font-size:11px; color:#64748b;">Jl. Dermaga Barat Muara Baru No. 15, Jakarta Utara</span></td>
+      <td>0813-8801-1107</td>
+      <td><span class="tag">Cakalang</span><span class="tag">Maesang</span><span class="tag">Layang</span><span class="tag">Salem</span><span class="tag">Deho</span></td>
+      <td class="text-center"><button class="btn btn-sm">Edit</button> <button class="btn btn-sm">Hapus</button></td>
+    </tr><tr>
+      <td class="text-center"><strong>S08</strong></td>
+      <td><strong>UD Sinar Bahari Utama</strong><br><span style="font-size:11px; color:#64748b;">Jl. Muara Baru Raya Blok F No. 02, Jakarta Utara</span></td>
+      <td>0815-8801-1108</td>
+      <td><span class="tag">Bandeng</span><span class="tag">Kembung Banjar</span><span class="tag">Cucut</span></td>
+      <td class="text-center"><button class="btn btn-sm">Edit</button> <button class="btn btn-sm">Hapus</button></td>
+    </tr></tbody>
+  </table>
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; font-size:11px; color:#64748b;">
+    <span>Menampilkan 1–8 dari 25 data supplier terdaftar</span>
+    <span>Pagination: [ &laquo; 1 | 2 | 3 | 4 &raquo; ]</span>
+  </div>
+</div>
+
+<div class="card" style="border: 2px dashed #0f172a; background:#f8fafc;">
+  <div class="card-header">
+    <div class="card-title">[Modal / Form] Tambah &amp; Edit Data Supplier + Pilihan Jenis Ikan</div>
+    <span class="tag tag-dark">Relasi: suppliers &harr; supplier_ikan &harr; jenis_ikans</span>
+  </div>
+  <div class="grid-2">
+    <div>
+      <div style="margin-bottom:10px;"><label class="form-label">Kode Supplier *</label><input class="form-control" value="S26" readonly></div>
+      <div style="margin-bottom:10px;"><label class="form-label">Nama Gudang / Supplier *</label><input class="form-control" value="PT Muara Bahari Lestari" readonly></div>
+      <div style="margin-bottom:10px;"><label class="form-label">Alamat Lengkap *</label><input class="form-control" value="Jl. Muara Baru Ujung Blok Q No. 05, Jakarta Utara" readonly></div>
+      <div><label class="form-label">No. Telepon / WhatsApp *</label><input class="form-control" value="0812-8801-1126" readonly></div>
+    </div>
+    <div>
+      <label class="form-label">Pilih Jenis Ikan yang Tersedia di Gudang Ini (Minimal 1) *</label>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; background:#ffffff; border:1.5px solid #94a3b8; padding:12px; border-radius:4px;">
+        <label><input type="checkbox" checked> Cakalang</label>
+        <label><input type="checkbox"> Maesang</label>
+        <label><input type="checkbox" checked> Layang</label>
+        <label><input type="checkbox"> Bandeng</label>
+        <label><input type="checkbox" checked> <strong>Salem</strong></label>
+        <label><input type="checkbox" checked> Kembung Banjar</label>
+        <label><input type="checkbox"> Deho</label>
+        <label><input type="checkbox"> Cucut</label>
+      </div>
+      <div style="margin-top:14px; text-align:right;">
+        <button class="btn">Batal</button>
+        <button class="btn btn-primary">Simpan Data Supplier</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </main>
+</div>
+</body>
+</html>

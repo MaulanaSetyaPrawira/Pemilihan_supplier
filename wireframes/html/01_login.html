@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Wireframe 01 — Halaman Login</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.wf-banner {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 6px 20px;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #334155;
+}
+.wf-banner strong { color: #38bdf8; letter-spacing: 0.5px; }
+.layout { display: flex; min-height: calc(100vh - 30px); }
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-right: 2px solid #cbd5e1;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.brand {
+  border: 2px dashed #64748b;
+  background: #f8fafc;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+.brand-title { font-weight: 700; font-size: 14px; color: #0f172a; }
+.brand-sub { font-size: 11px; color: #475569; margin-top: 2px; }
+.nav-group-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 12px 8px 6px;
+  letter-spacing: 0.6px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  margin-bottom: 4px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #334155;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-item.active {
+  background: #e2e8f0;
+  border: 1.5px solid #0f172a;
+  color: #0f172a;
+  font-weight: 700;
+}
+.nav-badge {
+  font-size: 10px;
+  background: #cbd5e1;
+  color: #0f172a;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+.user-box {
+  border-top: 1px solid #cbd5e1;
+  padding-top: 12px;
+  font-size: 12px;
+}
+.main { flex: 1; padding: 20px 24px; }
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.breadcrumb { font-size: 11px; color: #64748b; margin-bottom: 2px; }
+.page-title { font-size: 18px; font-weight: 700; color: #0f172a; }
+.btn {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1.5px solid #334155;
+  background: #ffffff;
+  color: #0f172a;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+.btn-sm { padding: 4px 9px; font-size: 11px; }
+.card {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+.card-title { font-size: 14px; font-weight: 700; color: #0f172a; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.kpi-box {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-left: 4px solid #0f172a;
+  padding: 12px 14px;
+  border-radius: 4px;
+}
+.kpi-label { font-size: 11px; color: #64748b; text-transform: uppercase; font-weight: 600; }
+.kpi-val { font-size: 22px; font-weight: 700; color: #0f172a; margin: 4px 0; }
+.kpi-sub { font-size: 11px; color: #475569; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th, td { border: 1px solid #cbd5e1; padding: 7px 9px; text-align: left; }
+th { background: #f8fafc; font-weight: 700; color: #0f172a; }
+tr:nth-child(even) td { background: #fcfcfd; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.tag {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 10px;
+  border: 1px solid #94a3b8;
+  background: #f1f5f9;
+  border-radius: 3px;
+  margin: 1px 2px 1px 0;
+  font-weight: 600;
+}
+.tag-dark { background: #0f172a; color: #ffffff; border-color: #0f172a; }
+.form-control {
+  width: 100%;
+  padding: 6px 9px;
+  border: 1.5px solid #94a3b8;
+  border-radius: 4px;
+  background: #ffffff;
+  font-size: 12px;
+}
+.form-label { display: block; font-size: 11px; font-weight: 700; margin-bottom: 4px; color: #334155; }
+.wire-note {
+  background: #fffbeb;
+  border: 1px dashed #b45309;
+  color: #78350f;
+  padding: 8px 12px;
+  font-size: 11px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.stepper { display: flex; gap: 8px; margin-bottom: 16px; }
+.step-box {
+  flex: 1;
+  border: 1.5px solid #cbd5e1;
+  background: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+.step-box.active { border-color: #0f172a; background: #e2e8f0; }
+.step-num { font-size: 10px; font-weight: 700; color: #475569; text-transform: uppercase; }
+.step-name { font-size: 13px; font-weight: 700; color: #0f172a; margin-top: 2px; }
+.tabs { display: flex; border-bottom: 2px solid #cbd5e1; margin-bottom: 12px; gap: 4px; }
+.tab { padding: 7px 14px; border: 1.5px solid #cbd5e1; border-bottom: none; background: #f8fafc; font-weight: 600; font-size: 12px; border-radius: 4px 4px 0 0; }
+.tab.active { background: #0f172a; color: #ffffff; border-color: #0f172a; }
+
+.login-wrap {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  max-width: 980px;
+  margin: 48px auto;
+  background: #ffffff;
+  border: 2px solid #0f172a;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.login-left {
+  background: #f8fafc;
+  border-right: 2px solid #cbd5e1;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.login-right { padding: 36px; }
+</style>
+</head>
+<body>
+<div class="wf-banner">
+  <span><strong>WIREFRAME 01</strong> | Halaman Autentikasi Pengguna (Login)</span>
+  <span>Route: GET /login &bull; POST /login</span>
+</div>
+<div class="login-wrap">
+  <div class="login-left">
+    <div>
+      <div class="tag tag-dark" style="margin-bottom:12px;">SISTEM PENDUKUNG KEPUTUSAN</div>
+      <h1 style="font-size:22px; margin-bottom:10px;">Pemilihan Supplier Terbaik Bahan Baku Ikan Pindang</h1>
+      <p style="color:#475569; margin-bottom:20px;">
+        Aplikasi berbasis web menggunakan metode <strong>TOPSIS</strong> untuk mengevaluasi gudang ikan beku di Muara Baru bagi kebutuhan produksi harian <strong>Rumah Cue — Pasar Kebayoran Lama</strong> (~3,5 ton/hari).
+      </p>
+      <div class="card" style="margin-bottom:12px;">
+        <div style="font-weight:700; margin-bottom:6px;">Cakupan 8 Jenis Ikan Bahan Baku:</div>
+        <div>
+          <span class="tag">Cakalang</span><span class="tag">Maesang</span><span class="tag">Layang</span><span class="tag">Bandeng</span>
+          <span class="tag">Salem</span><span class="tag">Kembung Banjar</span><span class="tag">Deho</span><span class="tag">Cucut</span>
+        </div>
+      </div>
+      <div class="card" style="margin-bottom:0;">
+        <div style="font-weight:700; margin-bottom:4px;">5 Kriteria Evaluasi TOPSIS:</div>
+        <div style="font-size:12px; color:#475569;">
+          C1 Kualitas &amp; Kesegaran (Benefit) &bull; C2 Harga/kg (Cost) &bull; C3 Ketepatan Waktu (Benefit) &bull; C4 Ketersediaan Stok (Benefit) &bull; C5 Responsivitas (Benefit)
+        </div>
+      </div>
+    </div>
+    <div style="font-size:11px; color:#64748b; margin-top:20px;">
+      &copy; 2026 Rumah Cue Pasar Kebayoran Lama &bull; Akses Terbatas Pemilik / Admin
+    </div>
+  </div>
+  <div class="login-right">
+    <h2 style="font-size:18px; margin-bottom:4px;">Masuk ke Sistem</h2>
+    <p style="color:#64748b; margin-bottom:18px; font-size:12px;">Silakan masukkan kredensial akun Pemilik/Admin Rumah Cue.</p>
+    <div class="wire-note">
+      <strong>Alur Validasi:</strong> Jika email/password salah, tampilkan alert error. Jika valid, redirect ke <code>02_dashboard</code>.
+    </div>
+    <div style="margin-bottom:14px;">
+      <label class="form-label">Email / Username *</label>
+      <input class="form-control" type="text" value="admin@rumahcue.id" readonly>
+    </div>
+    <div style="margin-bottom:14px;">
+      <label class="form-label">Kata Sandi (Password) *</label>
+      <input class="form-control" type="password" value="••••••••••" readonly>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; font-size:12px;">
+      <label><input type="checkbox" checked> Ingat sesi saya</label>
+      <span style="color:#64748b;">Role: Pemilik / Admin</span>
+    </div>
+    <a href="02_dashboard.html" class="btn btn-primary" style="width:100%; text-align:center; padding:10px;">MASUK KE DASHBOARD</a>
+    <div style="margin-top:20px; padding:10px; border:1px dashed #94a3b8; font-size:11px; color:#475569;">
+      <strong>Catatan Implementasi:</strong> Menggunakan Laravel Auth (session + bcrypt password hashing) pada tabel <code>users</code>.
+    </div>
+  </div>
+</div>
+</body>
+</html>
