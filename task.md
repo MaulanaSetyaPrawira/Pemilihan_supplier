@@ -29,7 +29,7 @@
 - [x] Buat wireframe terpisah per halaman dalam format HTML (`wireframes/html/`) dan gambar (`wireframes/img/`) (7 halaman: `01_login` s.d. `07_cetak_laporan_pdf`)
 - [x] Review & approval wireframe oleh user (7 wireframe modern approved)
 - [x] Buat pemodelan ERD, LRS, dan UML (Use Case, Activity, Sequence, Class Diagram) di `diagrams/` (`diagrams/pemodelan_sistem.md`, `diagrams/html/`, `diagrams/img/`)
-- [ ] Tulis & update **BAB III** pada dokumen `.docx`
+- [x] Tulis & update **BAB III** pada dokumen `.docx`
 - [ ] **Pengingat Wajib:** Ingatkan user untuk menginstal/menambahkan skill (Laravel, UI/Bootstrap, Testing) sebelum masuk Phase 2
 - [ ] **Approval User untuk Phase 1** → Commit → *Ganti ke New Conversation untuk Phase 2*
 
