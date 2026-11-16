@@ -1,50 +1,75 @@
 <!DOCTYPE html>
-<html lang="id">
-<head><meta charset="UTF-8"><title>Use Case Diagram — SPK Pemilihan Supplier Rumah Cue</title><style>
+<html lang="id"><head><meta charset="UTF-8"><title>Use Case Diagram — SPK Pemilihan Supplier Rumah Cue</title><style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #ffffff;
-  color: #0f172a;
-  padding: 20px;
-}
-.title {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 14px;
-  color: #0f172a;
-}
-svg { display: block; margin: 0 auto; background: #ffffff; }
-</style></head>
-<body>
-<div class="title">Use Case Diagram — SPK Pemilihan Supplier Rumah Cue</div>
-<svg width="840" height="540" viewBox="0 0 840 540" xmlns="http://www.w3.org/2000/svg">
+body { font-family: Arial, sans-serif; background: #fff; color: #000; padding: 16px; }
+svg { display: block; margin: 0 auto; background: #fff; }
+</style></head><body>
+<svg width="980" height="560" viewBox="0 0 980 560" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1e293b"/>
-    </marker>
     <marker id="open-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#1e293b" stroke-width="1.5"/>
     </marker>
-    <marker id="diamond" viewBox="0 0 14 10" refX="1" refY="5" markerWidth="10" markerHeight="8" orient="auto">
-      <path d="M 0 5 L 7 1 L 14 5 L 7 9 z" fill="#ffffff" stroke="#1e293b" stroke-width="1.4"/>
-    </marker>
   </defs>
-  
-<!-- System Boundary -->
-<rect x="260" y="30" width="520" height="480" rx="10" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
-<text x="520" y="56" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Sistem Pendukung Keputusan Pemilihan Supplier (TOPSIS)</text>
 
-<!-- Actor Stickman -->
-<circle cx="105" cy="210" r="22" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
-<line x1="105" y1="232" x2="105" y2="300" stroke="#1e293b" stroke-width="2"/>
-<line x1="65" y1="255" x2="145" y2="255" stroke="#1e293b" stroke-width="2"/>
-<line x1="105" y1="300" x2="72" y2="345" stroke="#1e293b" stroke-width="2"/>
-<line x1="105" y1="300" x2="138" y2="345" stroke="#1e293b" stroke-width="2"/>
-<text x="105" y="370" text-anchor="middle" font-size="12" font-weight="700">Pemilik / Admin</text>
-<text x="105" y="386" text-anchor="middle" font-size="11" fill="#64748b">Rumah Cue</text>
-<ellipse cx="430" cy="105" rx="115" ry="24" fill="#ffffff" stroke="#1e293b" stroke-width="1.6"/><text x="430" y="109" text-anchor="middle" font-size="11" font-weight="600">Login & Logout</text><line x1="145" y1="260" x2="315" y2="105" stroke="#334155" stroke-width="1.4"/><ellipse cx="430" cy="170" rx="115" ry="24" fill="#ffffff" stroke="#1e293b" stroke-width="1.6"/><text x="430" y="174" text-anchor="middle" font-size="11" font-weight="600">Kelola Data Supplier & Ketersediaan Ikan</text><line x1="145" y1="260" x2="315" y2="170" stroke="#334155" stroke-width="1.4"/><ellipse cx="430" cy="235" rx="115" ry="24" fill="#ffffff" stroke="#1e293b" stroke-width="1.6"/><text x="430" y="239" text-anchor="middle" font-size="11" font-weight="600">Kelola Master Jenis Ikan (8 Jenis)</text><line x1="145" y1="260" x2="315" y2="235" stroke="#334155" stroke-width="1.4"/><ellipse cx="430" cy="300" rx="115" ry="24" fill="#ffffff" stroke="#1e293b" stroke-width="1.6"/><text x="430" y="304" text-anchor="middle" font-size="11" font-weight="600">Kelola Kriteria, Sub-Kriteria & Bobot</text><line x1="145" y1="260" x2="315" y2="300" stroke="#334155" stroke-width="1.4"/><ellipse cx="430" cy="365" rx="115" ry="24" fill="#ffffff" stroke="#1e293b" stroke-width="1.6"/><text x="430" y="369" text-anchor="middle" font-size="11" font-weight="600">Input Penilaian Supplier per Jenis Ikan</text><line x1="145" y1="260" x2="315" y2="365" stroke="#334155" stroke-width="1.4"/><ellipse cx="660" cy="365" rx="95" ry="24" fill="#ffffff" stroke="#1e293b" stroke-width="1.6"/><text x="660" y="369" text-anchor="middle" font-size="11" font-weight="600">Hitung Peringkat TOPSIS</text><ellipse cx="430" cy="445" rx="115" ry="24" fill="#ffffff" stroke="#1e293b" stroke-width="1.6"/><text x="430" y="449" text-anchor="middle" font-size="11" font-weight="600">Lihat Hasil & Cetak Laporan PDF</text><line x1="145" y1="260" x2="315" y2="445" stroke="#334155" stroke-width="1.4"/><line x1="545" y1="365" x2="565" y2="365" stroke="#1e293b" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#open-arrow)"/><text x="555" y="334" text-anchor="middle" font-size="10" fill="#475569">&laquo;include&raquo;</text>
+  <!-- System Boundary -->
+  <rect x="220" y="25" width="540" height="510" rx="8" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+  <text x="490" y="52" text-anchor="middle" font-size="13.5" font-weight="bold">Sistem Pendukung Keputusan Pemilihan Supplier (TOPSIS)</text>
+
+  <!-- Actor Left: Admin -->
+  <circle cx="95" cy="215" r="20" fill="#fff" stroke="#1e293b" stroke-width="2"/>
+  <line x1="95" y1="235" x2="95" y2="295" stroke="#1e293b" stroke-width="2"/>
+  <line x1="60" y1="255" x2="130" y2="255" stroke="#1e293b" stroke-width="2"/>
+  <line x1="95" y1="295" x2="65" y2="335" stroke="#1e293b" stroke-width="2"/>
+  <line x1="95" y1="295" x2="125" y2="335" stroke="#1e293b" stroke-width="2"/>
+  <text x="95" y="360" text-anchor="middle" font-size="13" font-weight="bold">Admin</text>
+  <text x="95" y="376" text-anchor="middle" font-size="11" fill="#475569">Rumah Cue</text>
+
+  <!-- Actor Right: Pemilik -->
+  <circle cx="885" cy="215" r="20" fill="#fff" stroke="#1e293b" stroke-width="2"/>
+  <line x1="885" y1="235" x2="885" y2="295" stroke="#1e293b" stroke-width="2"/>
+  <line x1="850" y1="255" x2="920" y2="255" stroke="#1e293b" stroke-width="2"/>
+  <line x1="885" y1="295" x2="855" y2="335" stroke="#1e293b" stroke-width="2"/>
+  <line x1="885" y1="295" x2="915" y2="335" stroke="#1e293b" stroke-width="2"/>
+  <text x="885" y="360" text-anchor="middle" font-size="13" font-weight="bold">Pemilik</text>
+  <text x="885" y="376" text-anchor="middle" font-size="11" fill="#475569">Rumah Cue</text>
+
+  <!-- Use Cases -->
+  <!-- UC1: Login & Logout (Both) -->
+  <ellipse cx="490" cy="100" rx="120" ry="24" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="490" y="104" text-anchor="middle" font-size="11.5" font-weight="bold">Login &amp; Logout</text>
+  <line x1="130" y1="255" x2="370" y2="100" stroke="#334155" stroke-width="1.4"/>
+  <line x1="850" y1="255" x2="610" y2="100" stroke="#334155" stroke-width="1.4"/>
+
+  <!-- UC2: Kelola Data Supplier & Ketersediaan Ikan (Admin) -->
+  <ellipse cx="400" cy="170" rx="135" ry="24" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="400" y="174" text-anchor="middle" font-size="11" font-weight="bold">Kelola Data Supplier &amp; Ketersediaan Ikan</text>
+  <line x1="130" y1="255" x2="265" y2="170" stroke="#334155" stroke-width="1.4"/>
+
+  <!-- UC3: Kelola Master Jenis Ikan (Admin) -->
+  <ellipse cx="400" cy="240" rx="135" ry="24" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="400" y="244" text-anchor="middle" font-size="11" font-weight="bold">Kelola Master Jenis Ikan (8 Jenis)</text>
+  <line x1="130" y1="255" x2="265" y2="240" stroke="#334155" stroke-width="1.4"/>
+
+  <!-- UC4: Kelola Kriteria, Sub-Kriteria & Bobot (Pemilik) -->
+  <ellipse cx="560" cy="310" rx="140" ry="24" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="560" y="314" text-anchor="middle" font-size="11" font-weight="bold">Kelola Kriteria, Sub-Kriteria &amp; Bobot</text>
+  <line x1="850" y1="255" x2="700" y2="310" stroke="#334155" stroke-width="1.4"/>
+
+  <!-- UC5: Input Penilaian Supplier per Jenis Ikan (Admin) -->
+  <ellipse cx="385" cy="390" rx="130" ry="24" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="385" y="394" text-anchor="middle" font-size="11" font-weight="bold">Input Penilaian Supplier per Jenis Ikan</text>
+  <line x1="130" y1="255" x2="255" y2="390" stroke="#334155" stroke-width="1.4"/>
+
+  <!-- UC6: Hitung Peringkat TOPSIS (<<include>>) -->
+  <ellipse cx="645" cy="390" rx="95" ry="24" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="645" y="394" text-anchor="middle" font-size="11" font-weight="bold">Hitung Peringkat TOPSIS</text>
+  <line x1="515" y1="390" x2="550" y2="390" stroke="#1e293b" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#open-arrow)"/>
+  <text x="532" y="378" text-anchor="middle" font-size="10" fill="#475569">&laquo;include&raquo;</text>
+
+  <!-- UC7: Lihat Hasil & Cetak Laporan PDF (Both) -->
+  <ellipse cx="490" cy="475" rx="135" ry="24" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="490" y="479" text-anchor="middle" font-size="11.5" font-weight="bold">Lihat Hasil &amp; Cetak Laporan PDF</text>
+  <line x1="130" y1="255" x2="355" y2="475" stroke="#334155" stroke-width="1.4"/>
+  <line x1="850" y1="255" x2="625" y2="475" stroke="#334155" stroke-width="1.4"/>
 </svg>
-</body>
-</html>
+</body></html>
