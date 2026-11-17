@@ -1,150 +1,115 @@
-<!DOCTYPE html>
-<html lang="id"><head><meta charset="UTF-8"><title>Entity Relationship Diagram (ERD) — SPK TOPSIS Rumah Cue</title>
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; color: #0f172a; padding: 16px; }
-svg { display: block; margin: 0 auto; background: #fff; }
-</style></head><body>
-<svg width="1220" height="680" viewBox="0 0 1220 680" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- Crow's foot Many (at end) -->
-    <marker id="many" viewBox="0 0 16 14" refX="14" refY="7" markerWidth="14" markerHeight="12" orient="auto">
-      <path d="M 1 7 L 14 1 M 1 7 L 14 7 M 1 7 L 14 13 M 2 1 L 2 13" fill="none" stroke="#1e3a5f" stroke-width="1.6"/>
-    </marker>
-    <!-- One (at start/end) -->
-    <marker id="one" viewBox="0 0 12 14" refX="6" refY="7" markerWidth="10" markerHeight="12" orient="auto">
-      <path d="M 4 1 L 4 13 M 8 1 L 8 13" fill="none" stroke="#1e3a5f" stroke-width="1.6"/>
-    </marker>
-  </defs>
-
-  <!-- Entities -->
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; color: #0f172a; padding: 12px; }
+    svg { display: block; margin: 0 auto; background: #fff; }
+    </style></head><body><svg width="1080" height="640" viewBox="0 0 1080 640" xmlns="http://www.w3.org/2000/svg"><defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 1 L 10 5 L 0 9 z" fill="#1e293b"/>
+  </marker>
+  <marker id="open-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+  </marker>
+  <marker id="many" viewBox="0 0 16 14" refX="14" refY="7" markerWidth="14" markerHeight="12" orient="auto">
+    <path d="M 1 7 L 14 1 M 1 7 L 14 7 M 1 7 L 14 13 M 2 1 L 2 13" fill="none" stroke="#1e3a5f" stroke-width="1.6"/>
+  </marker>
+  <marker id="one" viewBox="0 0 12 14" refX="6" refY="7" markerWidth="10" markerHeight="12" orient="auto">
+    <path d="M 4 1 L 4 13 M 8 1 L 8 13" fill="none" stroke="#1e3a5f" stroke-width="1.6"/>
+  </marker>
+  <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 1 L 10 5 L 0 9 z" fill="#0f766e"/>
+  </marker>
+  <marker id="one-teal" viewBox="0 0 12 14" refX="6" refY="7" markerWidth="9" markerHeight="11" orient="auto">
+    <path d="M 4 1 L 4 13 M 8 1 L 8 13" fill="none" stroke="#0f766e" stroke-width="1.6"/>
+  </marker>
+</defs>
   <!-- users -->
-  <rect x="30" y="30" width="220" height="136" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="30" y="30" width="220" height="28" rx="4" fill="#1e3a5f"/>
-  <text x="140" y="49" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">users</text>
-  <text x="40" y="74" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="68" y="74" font-size="11" font-weight="600">id</text>
-  <text x="68" y="94" font-size="11" fill="#334155">name</text>
-  <text x="40" y="114" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="68" y="114" font-size="11" fill="#334155">email</text>
-  <text x="68" y="134" font-size="11" fill="#334155">password</text>
-  <text x="68" y="154" font-size="11" fill="#334155">role (admin / pemilik)</text>
+  <rect x="40" y="30" width="230" height="136" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="40" y="30" width="230" height="28" rx="4" fill="#1e3a5f"/>
+  <text x="155" y="49" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">users</text>
+  <text x="50" y="74" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="78" y="74" font-size="11" font-weight="600">id</text>
+  <text x="78" y="94" font-size="11" fill="#334155">name</text>
+  <text x="50" y="114" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="78" y="114" font-size="11" fill="#334155">email</text>
+  <text x="78" y="134" font-size="11" fill="#334155">password</text>
+  <text x="78" y="154" font-size="11" fill="#334155">role (admin / pemilik)</text>
 
   <!-- suppliers -->
-  <rect x="330" y="30" width="230" height="156" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="330" y="30" width="230" height="28" rx="4" fill="#1e3a5f"/>
-  <text x="445" y="49" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">suppliers</text>
-  <text x="340" y="74" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="368" y="74" font-size="11" font-weight="600">id</text>
-  <text x="340" y="94" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="368" y="94" font-size="11" fill="#334155">kode_supplier</text>
-  <text x="368" y="114" font-size="11" fill="#334155">nama_supplier</text>
-  <text x="368" y="134" font-size="11" fill="#334155">alamat</text>
-  <text x="368" y="154" font-size="11" fill="#334155">no_telepon</text>
-  <text x="368" y="174" font-size="11" fill="#334155">status</text>
-
-  <!-- supplier_ikan -->
-  <rect x="650" y="30" width="220" height="98" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="650" y="30" width="220" height="28" rx="4" fill="#1e3a5f"/>
-  <text x="760" y="49" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">supplier_ikan</text>
-  <text x="660" y="74" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="688" y="74" font-size="11" font-weight="600">id</text>
-  <text x="660" y="94" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="688" y="94" font-size="11">supplier_id</text>
-  <text x="660" y="114" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="688" y="114" font-size="11">jenis_ikan_id</text>
-
-  <!-- jenis_ikans -->
-  <rect x="960" y="30" width="220" height="98" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="960" y="30" width="220" height="28" rx="4" fill="#1e3a5f"/>
-  <text x="1070" y="49" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">jenis_ikans</text>
-  <text x="970" y="74" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="998" y="74" font-size="11" font-weight="600">id</text>
-  <text x="970" y="94" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="998" y="94" font-size="11" fill="#334155">kode_ikan</text>
-  <text x="998" y="114" font-size="11" fill="#334155">nama_ikan</text>
+  <rect x="420" y="30" width="250" height="176" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="420" y="30" width="250" height="28" rx="4" fill="#1e3a5f"/>
+  <text x="545" y="49" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">suppliers</text>
+  <text x="430" y="74" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="458" y="74" font-size="11" font-weight="600">id</text>
+  <text x="430" y="94" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="458" y="94" font-size="11" fill="#334155">kode_supplier</text>
+  <text x="458" y="114" font-size="11" fill="#334155">nama_supplier</text>
+  <text x="458" y="134" font-size="11" fill="#334155">alamat</text>
+  <text x="458" y="154" font-size="11" fill="#334155">no_telepon</text>
+  <text x="458" y="174" font-size="11" fill="#334155">jenis_ikan (daftar 8 ikan)</text>
+  <text x="458" y="194" font-size="11" fill="#334155">status</text>
 
   <!-- kriterias -->
-  <rect x="30" y="275" width="230" height="156" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="30" y="275" width="230" height="28" rx="4" fill="#1e3a5f"/>
-  <text x="145" y="294" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">kriterias</text>
-  <text x="40" y="319" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="68" y="319" font-size="11" font-weight="600">id</text>
-  <text x="40" y="339" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="68" y="339" font-size="11" fill="#334155">kode_kriteria</text>
-  <text x="68" y="359" font-size="11" fill="#334155">nama_kriteria</text>
-  <text x="68" y="379" font-size="11" fill="#334155">tipe (benefit/cost)</text>
-  <text x="68" y="399" font-size="11" fill="#334155">skor_kepentingan</text>
-  <text x="68" y="419" font-size="11" fill="#334155">bobot_normalisasi</text>
+  <rect x="40" y="270" width="230" height="156" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="40" y="270" width="230" height="28" rx="4" fill="#1e3a5f"/>
+  <text x="155" y="289" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">kriterias</text>
+  <text x="50" y="314" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="78" y="314" font-size="11" font-weight="600">id</text>
+  <text x="50" y="334" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="78" y="334" font-size="11" fill="#334155">kode_kriteria</text>
+  <text x="78" y="354" font-size="11" fill="#334155">nama_kriteria</text>
+  <text x="78" y="374" font-size="11" fill="#334155">tipe (benefit/cost)</text>
+  <text x="78" y="394" font-size="11" fill="#334155">skor_kepentingan</text>
+  <text x="78" y="414" font-size="11" fill="#334155">bobot_normalisasi</text>
 
   <!-- sub_kriterias -->
-  <rect x="30" y="485" width="230" height="116" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="30" y="485" width="230" height="28" rx="4" fill="#1e3a5f"/>
-  <text x="145" y="504" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">sub_kriterias</text>
-  <text x="40" y="529" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="68" y="529" font-size="11" font-weight="600">id</text>
-  <text x="40" y="549" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="68" y="549" font-size="11">kriteria_id</text>
-  <text x="68" y="569" font-size="11" fill="#334155">nilai (1–5)</text>
-  <text x="68" y="589" font-size="11" fill="#334155">keterangan</text>
+  <rect x="40" y="480" width="230" height="116" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="40" y="480" width="230" height="28" rx="4" fill="#1e3a5f"/>
+  <text x="155" y="499" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">sub_kriterias</text>
+  <text x="50" y="524" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="78" y="524" font-size="11" font-weight="600">id</text>
+  <text x="50" y="544" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="78" y="544" font-size="11">kriteria_id</text>
+  <text x="78" y="564" font-size="11" fill="#334155">nilai (1–5)</text>
+  <text x="78" y="584" font-size="11" fill="#334155">keterangan</text>
 
   <!-- penilaians -->
-  <rect x="400" y="275" width="250" height="176" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="400" y="275" width="250" height="28" rx="4" fill="#1e3a5f"/>
-  <text x="525" y="294" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">penilaians</text>
-  <text x="410" y="319" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="438" y="319" font-size="11" font-weight="600">id</text>
-  <text x="438" y="339" font-size="11" fill="#334155">periode</text>
-  <text x="410" y="359" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="438" y="359" font-size="11">jenis_ikan_id</text>
-  <text x="410" y="379" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="438" y="379" font-size="11">supplier_id</text>
-  <text x="410" y="399" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="438" y="399" font-size="11">kriteria_id</text>
-  <text x="410" y="419" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="438" y="419" font-size="11">user_id</text>
-  <text x="438" y="439" font-size="11" fill="#334155">nilai (1–5)</text>
+  <rect x="420" y="270" width="250" height="176" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="420" y="270" width="250" height="28" rx="4" fill="#1e3a5f"/>
+  <text x="545" y="289" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">penilaians</text>
+  <text x="430" y="314" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="458" y="314" font-size="11" font-weight="600">id</text>
+  <text x="458" y="334" font-size="11" fill="#334155">periode</text>
+  <text x="458" y="354" font-size="11" fill="#334155">jenis_ikan</text>
+  <text x="430" y="374" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="458" y="374" font-size="11">supplier_id</text>
+  <text x="430" y="394" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="458" y="394" font-size="11">kriteria_id</text>
+  <text x="430" y="414" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="458" y="414" font-size="11">user_id</text>
+  <text x="458" y="434" font-size="11" fill="#334155">nilai (1–5)</text>
 
   <!-- hasil_topsis -->
-  <rect x="780" y="275" width="260" height="196" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="780" y="275" width="260" height="28" rx="4" fill="#1e3a5f"/>
-  <text x="910" y="294" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">hasil_topsis</text>
-  <text x="790" y="319" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="818" y="319" font-size="11" font-weight="600">id</text>
-  <text x="818" y="339" font-size="11" fill="#334155">periode</text>
-  <text x="790" y="359" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="818" y="359" font-size="11">jenis_ikan_id</text>
-  <text x="790" y="379" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="818" y="379" font-size="11">supplier_id</text>
-  <text x="818" y="399" font-size="11" fill="#334155">d_plus</text>
-  <text x="818" y="419" font-size="11" fill="#334155">d_minus</text>
-  <text x="818" y="439" font-size="11" fill="#334155">nilai_preferensi</text>
-  <text x="818" y="459" font-size="11" fill="#334155">peringkat</text>
+  <rect x="780" y="270" width="260" height="196" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="780" y="270" width="260" height="28" rx="4" fill="#1e3a5f"/>
+  <text x="910" y="289" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">hasil_topsis</text>
+  <text x="790" y="314" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="818" y="314" font-size="11" font-weight="600">id</text>
+  <text x="818" y="334" font-size="11" fill="#334155">periode</text>
+  <text x="818" y="354" font-size="11" fill="#334155">jenis_ikan</text>
+  <text x="790" y="374" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="818" y="374" font-size="11">supplier_id</text>
+  <text x="818" y="394" font-size="11" fill="#334155">d_plus</text>
+  <text x="818" y="414" font-size="11" fill="#334155">d_minus</text>
+  <text x="818" y="434" font-size="11" fill="#334155">nilai_preferensi</text>
+  <text x="818" y="454" font-size="11" fill="#334155">peringkat</text>
 
-  <!-- Relationships with Crow's Foot markers & Verb Labels -->
-  <!-- suppliers -> supplier_ikan (1:N) -->
-  <path d="M 560 80 L 650 80" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
-  <text x="605" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a5f">1 : N</text>
+  <!-- Relations -->
+  <path d="M 155 426 L 155 480" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
+  <text x="165" y="458" font-size="10" font-weight="700" fill="#1e3a5f">memiliki (1:N)</text>
 
-  <!-- jenis_ikans -> supplier_ikan (1:N) -->
-  <path d="M 960 80 L 870 80" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
-  <text x="915" y="72" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a5f">1 : N</text>
+  <path d="M 270 110 L 330 110 L 330 335 L 420 335" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
+  <text x="375" y="327" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a5f">menginput (1:N)</text>
 
-  <!-- kriterias -> sub_kriterias (1:N) -->
-  <path d="M 145 431 L 145 485" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
-  <text x="155" y="462" font-size="10" font-weight="700" fill="#1e3a5f">memiliki (1:N)</text>
+  <path d="M 545 206 L 545 270" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
+  <text x="555" y="242" font-size="10" font-weight="700" fill="#1e3a5f">dinilai (1:N)</text>
 
-  <!-- users -> penilaians (1:N) -->
-  <path d="M 250 110 L 295 110 L 295 335 L 400 335" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
-  <text x="348" y="328" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a5f">menginput (1:N)</text>
+  <path d="M 270 390 L 420 390" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
+  <text x="345" y="382" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a5f">acuan (1:N)</text>
 
-  <!-- suppliers -> penilaians (1:N) -->
-  <path d="M 445 186 L 445 275" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
-  <text x="453" y="235" font-size="10" font-weight="700" fill="#1e3a5f">dinilai (1:N)</text>
+  <path d="M 670 118 L 910 118 L 910 270" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
+  <text x="795" y="110" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a5f">memperoleh (1:N)</text>
 
-  <!-- kriterias -> penilaians (1:N) -->
-  <path d="M 260 395 L 400 395" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
-  <text x="330" y="388" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a5f">acuan (1:N)</text>
-
-  <!-- jenis_ikans -> penilaians (1:N) -->
-  <path d="M 1030 128 L 1030 218 L 570 218 L 570 275" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
-  <text x="720" y="211" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a5f">kategori ikan (1:N)</text>
-
-  <!-- jenis_ikans -> hasil_topsis (1:N) -->
-  <path d="M 1085 128 L 1085 245 L 955 245 L 955 275" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
-  <text x="1020" y="238" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a5f">hasil (1:N)</text>
-
-  <!-- suppliers -> hasil_topsis (1:N) -->
-  <path d="M 520 186 L 520 198 L 860 198 L 860 275" fill="none" stroke="#1e3a5f" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#many)"/>
-  <text x="690" y="191" text-anchor="middle" font-size="10" font-weight="700" fill="#1e3a5f">memperoleh (1:N)</text>
-
-  <!-- Legend Box -->
-  <rect x="330" y="520" width="710" height="80" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2"/>
-  <text x="348" y="544" font-size="11.5" font-weight="700" fill="#0f172a">Keterangan Simbol ERD (Notasi Crow's Foot):</text>
-  <text x="348" y="566" font-size="11" fill="#b45309" font-weight="700">PK</text><text x="370" y="566" font-size="11" fill="#334155">= Primary Key</text>
-  <text x="480" y="566" font-size="11" fill="#1d4ed8" font-weight="700">FK</text><text x="502" y="566" font-size="11" fill="#334155">= Foreign Key</text>
-  <text x="615" y="566" font-size="11" fill="#047857" font-weight="700">UQ</text><text x="639" y="566" font-size="11" fill="#334155">= Unique Key</text>
-  <text x="745" y="566" font-size="11" fill="#1e3a5f" font-weight="700">||</text><text x="760" y="566" font-size="11" fill="#334155">= Satu (One)</text>
-  <text x="865" y="566" font-size="11" fill="#1e3a5f" font-weight="700">|&lt;</text><text x="884" y="566" font-size="11" fill="#334155">= Banyak (Many / N)</text>
-  <text x="348" y="586" font-size="10.5" fill="#475569">Relasi Many-to-Many (M:N) antara suppliers dan jenis_ikans diurai melalui entitas asosiatif supplier_ikan.</text>
-</svg>
-</body></html>
+  <rect x="360" y="510" width="680" height="75" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2"/>
+  <text x="378" y="534" font-size="11.5" font-weight="700">Keterangan Simbol ERD (Notasi Crow's Foot — 6 Entitas Inti):</text>
+  <text x="378" y="558" font-size="11" fill="#b45309" font-weight="700">PK</text><text x="400" y="558" font-size="11">= Primary Key</text>
+  <text x="510" y="558" font-size="11" fill="#1d4ed8" font-weight="700">FK</text><text x="532" y="558" font-size="11">= Foreign Key</text>
+  <text x="645" y="558" font-size="11" fill="#047857" font-weight="700">UQ</text><text x="669" y="558" font-size="11">= Unique Key</text>
+  <text x="775" y="558" font-size="11" fill="#1e3a5f" font-weight="700">||</text><text x="792" y="558" font-size="11">= Satu (One)</text>
+  <text x="895" y="558" font-size="11" fill="#1e3a5f" font-weight="700">|&lt;</text><text x="915" y="558" font-size="11">= Banyak (N)</text>
+</svg></body></html>

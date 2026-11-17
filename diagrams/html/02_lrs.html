@@ -1,137 +1,114 @@
-<!DOCTYPE html>
-<html lang="id"><head><meta charset="UTF-8"><title>Logical Record Structure (LRS) — Basis Data MySQL</title>
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; color: #0f172a; padding: 16px; }
-svg { display: block; margin: 0 auto; background: #fff; }
-</style></head><body>
-<svg width="1240" height="700" viewBox="0 0 1240 700" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#0f766e"/>
-    </marker>
-    <marker id="one" viewBox="0 0 12 14" refX="6" refY="7" markerWidth="9" markerHeight="11" orient="auto">
-      <path d="M 4 1 L 4 13 M 8 1 L 8 13" fill="none" stroke="#0f766e" stroke-width="1.6"/>
-    </marker>
-  </defs>
-
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; color: #0f172a; padding: 12px; }
+    svg { display: block; margin: 0 auto; background: #fff; }
+    </style></head><body><svg width="1100" height="640" viewBox="0 0 1100 640" xmlns="http://www.w3.org/2000/svg"><defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 1 L 10 5 L 0 9 z" fill="#1e293b"/>
+  </marker>
+  <marker id="open-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+  </marker>
+  <marker id="many" viewBox="0 0 16 14" refX="14" refY="7" markerWidth="14" markerHeight="12" orient="auto">
+    <path d="M 1 7 L 14 1 M 1 7 L 14 7 M 1 7 L 14 13 M 2 1 L 2 13" fill="none" stroke="#1e3a5f" stroke-width="1.6"/>
+  </marker>
+  <marker id="one" viewBox="0 0 12 14" refX="6" refY="7" markerWidth="10" markerHeight="12" orient="auto">
+    <path d="M 4 1 L 4 13 M 8 1 L 8 13" fill="none" stroke="#1e3a5f" stroke-width="1.6"/>
+  </marker>
+  <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 1 L 10 5 L 0 9 z" fill="#0f766e"/>
+  </marker>
+  <marker id="one-teal" viewBox="0 0 12 14" refX="6" refY="7" markerWidth="9" markerHeight="11" orient="auto">
+    <path d="M 4 1 L 4 13 M 8 1 L 8 13" fill="none" stroke="#0f766e" stroke-width="1.6"/>
+  </marker>
+</defs>
   <!-- users -->
-  <rect x="25" y="25" width="245" height="136" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="25" y="25" width="245" height="28" rx="4" fill="#0f766e"/>
-  <text x="147" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">users</text>
-  <text x="33" y="69" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="58" y="69" font-size="10.5" font-weight="600">id</text><text x="260" y="69" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="58" y="89" font-size="10.5">name</text><text x="260" y="89" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(100)</text>
-  <text x="33" y="109" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="58" y="109" font-size="10.5">email</text><text x="260" y="109" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(100)</text>
-  <text x="58" y="129" font-size="10.5">password</text><text x="260" y="129" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(255)</text>
-  <text x="58" y="149" font-size="10.5">role</text><text x="260" y="149" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(20)</text>
+  <rect x="30" y="30" width="255" height="136" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="30" y="30" width="255" height="28" rx="4" fill="#0f766e"/>
+  <text x="157" y="49" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">users</text>
+  <text x="38" y="74" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="62" y="74" font-size="10.5" font-weight="600">id</text><text x="275" y="74" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
+  <text x="62" y="94" font-size="10.5">name</text><text x="275" y="94" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(100)</text>
+  <text x="38" y="114" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="62" y="114" font-size="10.5">email</text><text x="275" y="114" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(100)</text>
+  <text x="62" y="134" font-size="10.5">password</text><text x="275" y="134" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(255)</text>
+  <text x="62" y="154" font-size="10.5">role</text><text x="275" y="154" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(20)</text>
 
   <!-- suppliers -->
-  <rect x="330" y="25" width="265" height="156" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="330" y="25" width="265" height="28" rx="4" fill="#0f766e"/>
-  <text x="462" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">suppliers</text>
-  <text x="338" y="69" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="364" y="69" font-size="10.5" font-weight="600">id</text><text x="585" y="69" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="338" y="89" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="364" y="89" font-size="10.5">kode_supplier</text><text x="585" y="89" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(10)</text>
-  <text x="364" y="109" font-size="10.5">nama_supplier</text><text x="585" y="109" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(120)</text>
-  <text x="364" y="129" font-size="10.5">alamat</text><text x="585" y="129" text-anchor="end" font-size="9.5" fill="#64748b">TEXT</text>
-  <text x="364" y="149" font-size="10.5">no_telepon</text><text x="585" y="149" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(20)</text>
-  <text x="364" y="169" font-size="10.5">status</text><text x="585" y="169" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(20)</text>
-
-  <!-- supplier_ikan -->
-  <rect x="665" y="25" width="245" height="98" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="665" y="25" width="245" height="28" rx="4" fill="#0f766e"/>
-  <text x="787" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">supplier_ikan</text>
-  <text x="673" y="69" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="698" y="69" font-size="10.5" font-weight="600">id</text><text x="900" y="69" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="673" y="89" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="698" y="89" font-size="10.5">supplier_id</text><text x="900" y="89" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="673" y="109" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="698" y="109" font-size="10.5">jenis_ikan_id</text><text x="900" y="109" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-
-  <!-- jenis_ikans -->
-  <rect x="975" y="25" width="235" height="98" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="975" y="25" width="235" height="28" rx="4" fill="#0f766e"/>
-  <text x="1092" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">jenis_ikans</text>
-  <text x="983" y="69" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="1008" y="69" font-size="10.5" font-weight="600">id</text><text x="1200" y="69" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="983" y="89" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="1008" y="89" font-size="10.5">kode_ikan</text><text x="1200" y="89" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(10)</text>
-  <text x="1008" y="109" font-size="10.5">nama_ikan</text><text x="1200" y="109" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(50)</text>
+  <rect x="405" y="30" width="280" height="176" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="405" y="30" width="280" height="28" rx="4" fill="#0f766e"/>
+  <text x="545" y="49" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">suppliers</text>
+  <text x="413" y="74" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="438" y="74" font-size="10.5" font-weight="600">id</text><text x="675" y="74" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
+  <text x="413" y="94" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="438" y="94" font-size="10.5">kode_supplier</text><text x="675" y="94" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(10)</text>
+  <text x="438" y="114" font-size="10.5">nama_supplier</text><text x="675" y="114" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(120)</text>
+  <text x="438" y="134" font-size="10.5">alamat</text><text x="675" y="134" text-anchor="end" font-size="9.5" fill="#64748b">TEXT</text>
+  <text x="438" y="154" font-size="10.5">no_telepon</text><text x="675" y="154" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(20)</text>
+  <text x="438" y="174" font-size="10.5">jenis_ikan</text><text x="675" y="174" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(255)</text>
+  <text x="438" y="194" font-size="10.5">status</text><text x="675" y="194" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(20)</text>
 
   <!-- kriterias -->
-  <rect x="25" y="275" width="265" height="156" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="25" y="275" width="265" height="28" rx="4" fill="#0f766e"/>
-  <text x="157" y="294" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">kriterias</text>
-  <text x="33" y="319" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="58" y="319" font-size="10.5" font-weight="600">id</text><text x="280" y="319" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="33" y="339" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="58" y="339" font-size="10.5">kode_kriteria</text><text x="280" y="339" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(10)</text>
-  <text x="58" y="359" font-size="10.5">nama_kriteria</text><text x="280" y="359" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(100)</text>
-  <text x="58" y="379" font-size="10.5">tipe</text><text x="280" y="379" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(10)</text>
-  <text x="58" y="399" font-size="10.5">skor_kepentingan</text><text x="280" y="399" text-anchor="end" font-size="9.5" fill="#64748b">INT(11)</text>
-  <text x="58" y="419" font-size="10.5">bobot_normalisasi</text><text x="280" y="419" text-anchor="end" font-size="9.5" fill="#64748b">DECIMAL(8,4)</text>
+  <rect x="30" y="270" width="265" height="156" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="30" y="270" width="265" height="28" rx="4" fill="#0f766e"/>
+  <text x="162" y="289" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">kriterias</text>
+  <text x="38" y="314" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="62" y="314" font-size="10.5" font-weight="600">id</text><text x="285" y="314" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
+  <text x="38" y="334" font-size="10" font-weight="700" fill="#047857">UQ</text><text x="62" y="334" font-size="10.5">kode_kriteria</text><text x="285" y="334" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(10)</text>
+  <text x="62" y="354" font-size="10.5">nama_kriteria</text><text x="285" y="354" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(100)</text>
+  <text x="62" y="374" font-size="10.5">tipe</text><text x="285" y="374" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(10)</text>
+  <text x="62" y="394" font-size="10.5">skor_kepentingan</text><text x="285" y="394" text-anchor="end" font-size="9.5" fill="#64748b">INT(11)</text>
+  <text x="62" y="414" font-size="10.5">bobot_normalisasi</text><text x="285" y="414" text-anchor="end" font-size="9.5" fill="#64748b">DECIMAL(8,4)</text>
 
   <!-- sub_kriterias -->
-  <rect x="25" y="485" width="265" height="116" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="25" y="485" width="265" height="28" rx="4" fill="#0f766e"/>
-  <text x="157" y="504" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">sub_kriterias</text>
-  <text x="33" y="529" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="58" y="529" font-size="10.5" font-weight="600">id</text><text x="280" y="529" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="33" y="549" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="58" y="549" font-size="10.5">kriteria_id</text><text x="280" y="549" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="58" y="569" font-size="10.5">nilai</text><text x="280" y="569" text-anchor="end" font-size="9.5" fill="#64748b">INT(11)</text>
-  <text x="58" y="589" font-size="10.5">keterangan</text><text x="280" y="589" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(255)</text>
+  <rect x="30" y="480" width="265" height="116" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="30" y="480" width="265" height="28" rx="4" fill="#0f766e"/>
+  <text x="162" y="499" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">sub_kriterias</text>
+  <text x="38" y="524" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="62" y="524" font-size="10.5" font-weight="600">id</text><text x="285" y="524" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
+  <text x="38" y="544" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="62" y="544" font-size="10.5">kriteria_id</text><text x="285" y="544" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
+  <text x="62" y="564" font-size="10.5">nilai</text><text x="285" y="564" text-anchor="end" font-size="9.5" fill="#64748b">INT(11)</text>
+  <text x="62" y="584" font-size="10.5">keterangan</text><text x="285" y="584" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(255)</text>
 
   <!-- penilaians -->
-  <rect x="395" y="275" width="275" height="176" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="395" y="275" width="275" height="28" rx="4" fill="#0f766e"/>
-  <text x="532" y="294" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">penilaians</text>
-  <text x="403" y="319" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="428" y="319" font-size="10.5" font-weight="600">id</text><text x="660" y="319" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="428" y="339" font-size="10.5">periode</text><text x="660" y="339" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(30)</text>
-  <text x="403" y="359" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="428" y="359" font-size="10.5">jenis_ikan_id</text><text x="660" y="359" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="403" y="379" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="428" y="379" font-size="10.5">supplier_id</text><text x="660" y="379" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="403" y="399" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="428" y="399" font-size="10.5">kriteria_id</text><text x="660" y="399" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="403" y="419" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="428" y="419" font-size="10.5">user_id</text><text x="660" y="419" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="428" y="439" font-size="10.5">nilai</text><text x="660" y="439" text-anchor="end" font-size="9.5" fill="#64748b">INT(11)</text>
+  <rect x="405" y="270" width="280" height="176" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="405" y="270" width="280" height="28" rx="4" fill="#0f766e"/>
+  <text x="545" y="289" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">penilaians</text>
+  <text x="413" y="314" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="438" y="314" font-size="10.5" font-weight="600">id</text><text x="675" y="314" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
+  <text x="438" y="334" font-size="10.5">periode</text><text x="675" y="334" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(30)</text>
+  <text x="438" y="354" font-size="10.5">jenis_ikan</text><text x="675" y="354" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(50)</text>
+  <text x="413" y="374" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="438" y="374" font-size="10.5">supplier_id</text><text x="675" y="374" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
+  <text x="413" y="394" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="438" y="394" font-size="10.5">kriteria_id</text><text x="675" y="394" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
+  <text x="413" y="414" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="438" y="414" font-size="10.5">user_id</text><text x="675" y="414" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
+  <text x="438" y="434" font-size="10.5">nilai</text><text x="675" y="434" text-anchor="end" font-size="9.5" fill="#64748b">INT(11)</text>
 
   <!-- hasil_topsis -->
-  <rect x="780" y="275" width="285" height="196" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
-  <rect x="780" y="275" width="285" height="28" rx="4" fill="#0f766e"/>
-  <text x="922" y="294" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">hasil_topsis</text>
-  <text x="788" y="319" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="814" y="319" font-size="10.5" font-weight="600">id</text><text x="1055" y="319" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="814" y="339" font-size="10.5">periode</text><text x="1055" y="339" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(30)</text>
-  <text x="788" y="359" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="814" y="359" font-size="10.5">jenis_ikan_id</text><text x="1055" y="359" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="788" y="379" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="814" y="379" font-size="10.5">supplier_id</text><text x="1055" y="379" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
-  <text x="814" y="399" font-size="10.5">d_plus</text><text x="1055" y="399" text-anchor="end" font-size="9.5" fill="#64748b">DECIMAL(10,6)</text>
-  <text x="814" y="419" font-size="10.5">d_minus</text><text x="1055" y="419" text-anchor="end" font-size="9.5" fill="#64748b">DECIMAL(10,6)</text>
-  <text x="814" y="439" font-size="10.5">nilai_preferensi</text><text x="1055" y="439" text-anchor="end" font-size="9.5" fill="#64748b">DECIMAL(10,6)</text>
-  <text x="814" y="459" font-size="10.5">peringkat</text><text x="1055" y="459" text-anchor="end" font-size="9.5" fill="#64748b">INT(11)</text>
+  <rect x="780" y="270" width="290" height="196" rx="4" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="780" y="270" width="290" height="28" rx="4" fill="#0f766e"/>
+  <text x="925" y="289" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">hasil_topsis</text>
+  <text x="788" y="314" font-size="10" font-weight="700" fill="#b45309">PK</text><text x="814" y="314" font-size="10.5" font-weight="600">id</text><text x="1060" y="314" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
+  <text x="814" y="334" font-size="10.5">periode</text><text x="1060" y="334" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(30)</text>
+  <text x="814" y="354" font-size="10.5">jenis_ikan</text><text x="1060" y="354" text-anchor="end" font-size="9.5" fill="#64748b">VARCHAR(50)</text>
+  <text x="788" y="374" font-size="10" font-weight="700" fill="#1d4ed8">FK</text><text x="814" y="374" font-size="10.5">supplier_id</text><text x="1060" y="374" text-anchor="end" font-size="9.5" fill="#64748b">BIGINT(20)</text>
+  <text x="814" y="394" font-size="10.5">d_plus</text><text x="1060" y="394" text-anchor="end" font-size="9.5" fill="#64748b">DECIMAL(10,6)</text>
+  <text x="814" y="414" font-size="10.5">d_minus</text><text x="1060" y="414" text-anchor="end" font-size="9.5" fill="#64748b">DECIMAL(10,6)</text>
+  <text x="814" y="434" font-size="10.5">nilai_preferensi</text><text x="1060" y="434" text-anchor="end" font-size="9.5" fill="#64748b">DECIMAL(10,6)</text>
+  <text x="814" y="454" font-size="10.5">peringkat</text><text x="1060" y="454" text-anchor="end" font-size="9.5" fill="#64748b">INT(11)</text>
 
   <!-- Arrows -->
-  <path d="M 595 85 L 665 85" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#arrow)"/>
-  <text x="630" y="77" text-anchor="middle" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
+  <path d="M 162 426 L 162 480" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one-teal)" marker-end="url(#arrow-teal)"/>
+  <text x="172" y="458" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
 
-  <path d="M 975 85 L 910 85" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#arrow)"/>
-  <text x="942" y="77" text-anchor="middle" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
+  <path d="M 285 110 L 340 110 L 340 335 L 405 335" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one-teal)" marker-end="url(#arrow-teal)"/>
+  <text x="372" y="327" text-anchor="middle" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
 
-  <path d="M 157 431 L 157 485" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#arrow)"/>
-  <text x="167" y="462" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
+  <path d="M 545 206 L 545 270" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one-teal)" marker-end="url(#arrow-teal)"/>
+  <text x="555" y="242" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
 
-  <path d="M 270 110 L 305 110 L 305 335 L 395 335" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#arrow)"/>
-  <text x="350" y="328" text-anchor="middle" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
+  <path d="M 295 390 L 405 390" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one-teal)" marker-end="url(#arrow-teal)"/>
+  <text x="350" y="382" text-anchor="middle" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
 
-  <path d="M 445 181 L 445 275" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#arrow)"/>
-  <text x="453" y="232" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
+  <path d="M 685 118 L 925 118 L 925 270" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one-teal)" marker-end="url(#arrow-teal)"/>
+  <text x="805" y="110" text-anchor="middle" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
 
-  <path d="M 290 395 L 395 395" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#arrow)"/>
-  <text x="342" y="388" text-anchor="middle" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
-
-  <path d="M 1050 123 L 1050 215 L 580 215 L 580 275" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#arrow)"/>
-  <text x="735" y="208" text-anchor="middle" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
-
-  <path d="M 1105 123 L 1105 242 L 965 242 L 965 275" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#arrow)"/>
-  <text x="1035" y="235" text-anchor="middle" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
-
-  <path d="M 520 181 L 520 195 L 870 195 L 870 275" fill="none" stroke="#0f766e" stroke-width="1.6" marker-start="url(#one)" marker-end="url(#arrow)"/>
-  <text x="695" y="188" text-anchor="middle" font-size="10" font-weight="700" fill="#0f766e">1 → N</text>
-
-  <!-- Legend Box -->
-  <rect x="330" y="520" width="735" height="80" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2"/>
-  <text x="348" y="544" font-size="11.5" font-weight="700" fill="#0f172a">Keterangan Simbol Logical Record Structure (LRS):</text>
-  <text x="348" y="566" font-size="11" fill="#b45309" font-weight="700">PK</text><text x="370" y="566" font-size="11" fill="#334155">= Primary Key</text>
-  <text x="480" y="566" font-size="11" fill="#1d4ed8" font-weight="700">FK</text><text x="502" y="566" font-size="11" fill="#334155">= Foreign Key</text>
-  <text x="615" y="566" font-size="11" fill="#047857" font-weight="700">UQ</text><text x="639" y="566" font-size="11" fill="#334155">= Unique Key</text>
-  <text x="750" y="566" font-size="11" fill="#0f766e" font-weight="700">1 → N</text><text x="790" y="566" font-size="11" fill="#334155">= Kardinalitas One-to-Many (arah PK ke FK)</text>
-  <text x="348" y="586" font-size="10.5" fill="#475569">Setiap kolom dilengkapi tipe data dan panjang karakter (Type &amp; Length) sesuai struktur fisik MySQL pada Tabel 3.11.</text>
-</svg>
-</body></html>
+  <rect x="360" y="510" width="710" height="75" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2"/>
+  <text x="378" y="534" font-size="11.5" font-weight="700">Keterangan Simbol Logical Record Structure (LRS — 6 Tabel MySQL):</text>
+  <text x="378" y="558" font-size="11" fill="#b45309" font-weight="700">PK</text><text x="400" y="558" font-size="11">= Primary Key</text>
+  <text x="510" y="558" font-size="11" fill="#1d4ed8" font-weight="700">FK</text><text x="532" y="558" font-size="11">= Foreign Key</text>
+  <text x="645" y="558" font-size="11" fill="#047857" font-weight="700">UQ</text><text x="669" y="558" font-size="11">= Unique Key</text>
+  <text x="775" y="558" font-size="11" fill="#0f766e" font-weight="700">1 → N</text><text x="815" y="558" font-size="11">= Kardinalitas One-to-Many</text>
+</svg></body></html>

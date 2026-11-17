@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; color: #0f172a; padding: 12px; }
+    svg { display: block; margin: 0 auto; background: #fff; }
+    </style></head><body><svg width="620" height="740" viewBox="0 0 620 740" xmlns="http://www.w3.org/2000/svg"><defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 1 L 10 5 L 0 9 z" fill="#1e293b"/>
+  </marker>
+  <marker id="open-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+  </marker>
+  <marker id="many" viewBox="0 0 16 14" refX="14" refY="7" markerWidth="14" markerHeight="12" orient="auto">
+    <path d="M 1 7 L 14 1 M 1 7 L 14 7 M 1 7 L 14 13 M 2 1 L 2 13" fill="none" stroke="#1e3a5f" stroke-width="1.6"/>
+  </marker>
+  <marker id="one" viewBox="0 0 12 14" refX="6" refY="7" markerWidth="10" markerHeight="12" orient="auto">
+    <path d="M 4 1 L 4 13 M 8 1 L 8 13" fill="none" stroke="#1e3a5f" stroke-width="1.6"/>
+  </marker>
+  <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 1 L 10 5 L 0 9 z" fill="#0f766e"/>
+  </marker>
+  <marker id="one-teal" viewBox="0 0 12 14" refX="6" refY="7" markerWidth="9" markerHeight="11" orient="auto">
+    <path d="M 4 1 L 4 13 M 8 1 L 8 13" fill="none" stroke="#0f766e" stroke-width="1.6"/>
+  </marker>
+</defs>
+  <rect x="235" y="15" width="150" height="36" rx="18" fill="#fff" stroke="#1e293b" stroke-width="1.8"/>
+  <text x="310" y="38" text-anchor="middle" font-size="12" font-weight="bold">Mulai</text>
+  <line x1="310" y1="51" x2="310" y2="75" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <polygon points="150,75 490,75 470,120 130,120" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="310" y="95" text-anchor="middle" font-size="11" font-weight="bold">Input Alternatif Supplier, Kriteria (C1–C5),</text>
+  <text x="310" y="110" text-anchor="middle" font-size="11">Skor Bobot (1–5) &amp; Nilai Penilaian (1–5)</text>
+  <line x1="310" y1="120" x2="310" y2="145" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="145" y="145" width="330" height="40" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="310" y="169" text-anchor="middle" font-size="11" font-weight="bold">Normalisasi Bobot Kriteria: wj = sj / ∑sk</text>
+  <line x1="310" y1="185" x2="310" y2="210" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="145" y="210" width="330" height="40" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="310" y="234" text-anchor="middle" font-size="11" font-weight="bold">Susun Matriks Keputusan (X) &amp; Pembagi √(∑xij²)</text>
+  <line x1="310" y1="250" x2="310" y2="275" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="145" y="275" width="330" height="40" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="310" y="299" text-anchor="middle" font-size="11" font-weight="bold">Hitung Matriks Ternormalisasi (R) &amp; Terbobot (Y)</text>
+  <line x1="310" y1="315" x2="310" y2="340" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <polygon points="310,340 430,380 310,420 190,380" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="310" y="384" text-anchor="middle" font-size="11" font-weight="bold">Tipe Kriteria = Benefit?</text>
+
+  <!-- Ya (Benefit) -->
+  <line x1="190" y1="380" x2="115" y2="380" stroke="#1e293b" stroke-width="1.5"/>
+  <line x1="115" y1="380" x2="115" y2="430" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="150" y="373" font-size="10.5" font-weight="bold">Ya</text>
+  <rect x="25" y="430" width="180" height="42" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="115" y="448" text-anchor="middle" font-size="10.5" font-weight="bold">A+ = max(yij)</text>
+  <text x="115" y="463" text-anchor="middle" font-size="10.5">A− = min(yij)</text>
+
+  <!-- Tidak (Cost) -->
+  <line x1="430" y1="380" x2="505" y2="380" stroke="#1e293b" stroke-width="1.5"/>
+  <line x1="505" y1="380" x2="505" y2="430" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="460" y="373" font-size="10.5" font-weight="bold">Tidak (Cost)</text>
+  <rect x="415" y="430" width="180" height="42" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="505" y="448" text-anchor="middle" font-size="10.5" font-weight="bold">A+ = min(yij)</text>
+  <text x="505" y="463" text-anchor="middle" font-size="10.5">A− = max(yij)</text>
+
+  <line x1="115" y1="472" x2="115" y2="500" stroke="#1e293b" stroke-width="1.5"/>
+  <line x1="505" y1="472" x2="505" y2="500" stroke="#1e293b" stroke-width="1.5"/>
+  <line x1="115" y1="500" x2="505" y2="500" stroke="#1e293b" stroke-width="1.5"/>
+  <line x1="310" y1="500" x2="310" y2="520" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="145" y="520" width="330" height="40" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="310" y="544" text-anchor="middle" font-size="11" font-weight="bold">Hitung Jarak Ideal Di+ &amp; Di− serta Preferensi Vi</text>
+  <line x1="310" y1="560" x2="310" y2="585" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <polygon points="155,585 485,585 465,630 135,630" fill="#fff" stroke="#1e293b" stroke-width="1.6"/>
+  <text x="310" y="612" text-anchor="middle" font-size="11" font-weight="bold">Tampilkan Peringkat Supplier Tertinggi → Terendah</text>
+  <line x1="310" y1="630" x2="310" y2="655" stroke="#1e293b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="235" y="655" width="150" height="36" rx="18" fill="#fff" stroke="#1e293b" stroke-width="1.8"/>
+  <text x="310" y="678" text-anchor="middle" font-size="12" font-weight="bold">Selesai</text>
+</svg></body></html>
